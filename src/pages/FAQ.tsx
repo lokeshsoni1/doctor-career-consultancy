@@ -19,28 +19,28 @@ const faqs = [
 const FAQ = () => (
   <>
     <section className="hero-gradient section-padding text-center">
-      <div className="container-narrow">
-        <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-4">Frequently Asked Questions</h1>
-        <p className="text-primary-foreground/70 max-w-2xl mx-auto">
+      <div className="container-narrow relative z-10">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4" style={{ letterSpacing: '-1.5px' }}>Frequently Asked Questions</h1>
+        <p className="text-white/50 max-w-2xl mx-auto" style={{ fontSize: '18px', lineHeight: '1.7' }}>
           Find answers to common questions about our services
         </p>
       </div>
     </section>
 
-    <section className="section-padding">
+    <section className="section-padding section-light">
       <div className="container-narrow max-w-3xl mx-auto">
         <AnimatedSection>
-          <Accordion type="single" collapsible className="space-y-3">
+          <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, i) => (
               <AccordionItem
                 key={i}
                 value={`item-${i}`}
-                className="glass-card rounded-2xl px-6 border-none"
+                className="premium-card px-8 border-none"
               >
-                <AccordionTrigger className="text-left font-semibold text-sm hover:no-underline py-5">
+                <AccordionTrigger className="text-left font-semibold text-sm hover:no-underline py-6">
                   {faq.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground text-sm leading-relaxed pb-5">
+                <AccordionContent className="text-muted-foreground text-sm leading-relaxed pb-6" style={{ lineHeight: '1.7' }}>
                   {faq.a}
                 </AccordionContent>
               </AccordionItem>
