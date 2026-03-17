@@ -29,16 +29,16 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/80 backdrop-blur-2xl shadow-soft border-b border-border"
+          ? "bg-card/90 backdrop-blur-xl shadow-sm border-b border-border"
           : "bg-transparent"
       }`}
     >
       <div className="container-narrow flex items-center justify-between h-16 md:h-20">
-        <Link to="/" className="flex items-center gap-3 group">
-          <img src={logo} alt="Doctor Career Consultancy" className="h-10 w-auto rounded-lg" />
-          <span className={`hidden sm:block font-bold text-lg transition-colors ${scrolled ? 'text-foreground' : 'text-white'}`}>
+        <Link to="/" className="flex items-center gap-3">
+          <img src={logo} alt="Doctor Career Consultancy" className="h-10 w-auto" />
+          <span className="hidden sm:block font-bold text-lg text-foreground">
             Doctor Career
           </span>
         </Link>
@@ -48,12 +48,10 @@ const Header = () => {
             <Link
               key={link.path}
               to={link.path}
-              className={`px-3 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
+              className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                 location.pathname === link.path
-                  ? "bg-gradient-to-r from-indigo-500 to-violet-500 text-white shadow-medium"
-                  : scrolled
-                    ? "text-foreground/70 hover:text-foreground hover:bg-muted"
-                    : "text-white/70 hover:text-white hover:bg-white/10"
+                  ? "bg-primary text-primary-foreground"
+                  : "text-foreground/70 hover:text-foreground hover:bg-muted"
               }`}
             >
               {link.label}
@@ -63,7 +61,7 @@ const Header = () => {
             href="https://wa.me/918875061164"
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-2 btn-success !py-2 !px-5 !rounded-xl"
+            className="ml-2 inline-flex items-center gap-2 bg-primary text-primary-foreground px-5 py-2 rounded-lg text-sm font-semibold hover-lift"
           >
             <MessageCircle size={16} /> Apply Now
           </a>
@@ -71,7 +69,7 @@ const Header = () => {
 
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className={`lg:hidden p-2 rounded-xl transition-colors ${scrolled ? 'text-foreground hover:bg-muted' : 'text-white hover:bg-white/10'}`}
+          className="lg:hidden p-2 rounded-lg hover:bg-muted transition-colors text-foreground"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -83,16 +81,16 @@ const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white/95 backdrop-blur-2xl border-b border-border overflow-hidden"
+            className="lg:hidden bg-card/95 backdrop-blur-xl border-b border-border overflow-hidden"
           >
             <nav className="container-narrow py-4 flex flex-col gap-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
+                  className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
                     location.pathname === link.path
-                      ? "bg-gradient-to-r from-indigo-500 to-violet-500 text-white"
+                      ? "bg-primary text-primary-foreground"
                       : "text-foreground/70 hover:text-foreground hover:bg-muted"
                   }`}
                 >
@@ -103,7 +101,7 @@ const Header = () => {
                 href="https://wa.me/918875061164"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 btn-success !py-3 !rounded-xl justify-center"
+                className="mt-2 inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-4 py-3 rounded-lg text-sm font-semibold"
               >
                 <MessageCircle size={16} /> Apply Now
               </a>
