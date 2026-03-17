@@ -9,7 +9,7 @@ const Footer = () => (
         <div className="md:col-span-1">
           <img src={logo} alt="Doctor Career Consultancy" className="h-12 w-auto mb-4 rounded" />
           <p className="text-background/60 text-sm leading-relaxed">
-            Be Wise Take Our Advice. Your trusted recruitment partner with 7+ years of industry experience.
+            Best Placement Agency in Jaipur. Your trusted recruitment partner with 7+ years of industry experience.
           </p>
         </div>
 
@@ -20,8 +20,8 @@ const Footer = () => (
               { label: "Home", path: "/" },
               { label: "About", path: "/about" },
               { label: "Services", path: "/services" },
-              { label: "Jobs", path: "/jobs" },
-              { label: "Create CV", path: "/cv" },
+              { label: "Latest Jobs", path: "/jobs" },
+              { label: "Build Your CV", path: "/cv" },
               { label: "FAQ", path: "/faq" },
             ].map((l) => (
               <li key={l.path}>
@@ -48,15 +48,15 @@ const Footer = () => (
           <ul className="space-y-3 text-sm text-background/50">
             <li className="flex items-start gap-2">
               <Phone size={16} className="mt-0.5 shrink-0" />
-              +91 98765 43210
+              +91 88750 61164
             </li>
             <li className="flex items-start gap-2">
               <Mail size={16} className="mt-0.5 shrink-0" />
-              info@doctorcareerconsultancy.com
+              hr@doctorcareerconsultancy.in
             </li>
             <li className="flex items-start gap-2">
               <MapPin size={16} className="mt-0.5 shrink-0" />
-              New Delhi, India
+              Jaipur, Rajasthan, India
             </li>
           </ul>
         </div>

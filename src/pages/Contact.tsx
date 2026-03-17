@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Phone, Mail, MapPin, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Send, MessageCircle } from "lucide-react";
 import { z } from "zod";
 import AnimatedSection from "@/components/AnimatedSection";
 import { useToast } from "@/hooks/use-toast";
@@ -84,9 +84,9 @@ const Contact = () => {
               <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
               <div className="space-y-6 mb-8">
                 {[
-                  { icon: Phone, label: "Phone", value: "+91 98765 43210" },
-                  { icon: Mail, label: "Email", value: "info@doctorcareerconsultancy.com" },
-                  { icon: MapPin, label: "Address", value: "New Delhi, India" },
+                  { icon: Phone, label: "Phone", value: "+91 88750 61164" },
+                  { icon: Mail, label: "Email", value: "hr@doctorcareerconsultancy.in" },
+                  { icon: MapPin, label: "Address", value: "Jaipur, Rajasthan, India" },
                 ].map((item) => (
                   <div key={item.label} className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
@@ -99,17 +99,15 @@ const Contact = () => {
                   </div>
                 ))}
               </div>
-              <div className="rounded-2xl overflow-hidden border border-border h-64">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224345.83923192776!2d77.06889754725782!3d28.52758200617607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi%2C%20India!5e0!3m2!1sen!2sus!4v1699900000000!5m2!1sen!2sus"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  title="Office Location"
-                />
-              </div>
+
+              <a
+                href="https://wa.me/918875061164"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3 rounded-xl font-semibold hover-lift text-sm w-full justify-center"
+              >
+                <MessageCircle size={18} /> Chat on WhatsApp Now
+              </a>
             </AnimatedSection>
           </div>
         </div>

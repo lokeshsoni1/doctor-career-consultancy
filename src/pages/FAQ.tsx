@@ -7,13 +7,13 @@ import {
 } from "@/components/ui/accordion";
 
 const faqs = [
-  { q: "What industries does Doctor Career Consultancy serve?", a: "We serve multiple industries including BPO & Customer Support, Information Technology, Education & Training, Jewellery Industry, Automobile Sector, Sales & Marketing, and Administration & Operations." },
-  { q: "How can I apply for a job through Doctor Career?", a: "You can browse our Jobs page to see current openings and apply directly. You can also create your CV using our built-in resume builder and submit it to us for consideration." },
+  { q: "What industries does Doctor Career Consultancy serve?", a: "We serve multiple industries including BPO & Customer Support, Information Technology, Education & Training, and Administration & Operations." },
+  { q: "How can I apply for a job through Doctor Career?", a: "You can browse our Jobs page to see current openings and apply directly via WhatsApp. You can also create your CV using our built-in resume builder and submit it to us for consideration." },
   { q: "Do you charge job seekers for placement services?", a: "Our primary focus is connecting talent with opportunities. Contact us to learn more about our process and any applicable terms." },
   { q: "How long does the recruitment process typically take?", a: "The timeline varies depending on the role and industry. Generally, our efficient process ensures placements are made within 2-4 weeks from initial screening." },
   { q: "What makes Doctor Career different from other recruitment agencies?", a: "With 7+ years of experience, a strong multi-industry network, quality candidate screening, and commitment to long-term success, we stand out through reliability and personalized service." },
   { q: "Can employers request candidates for specific skill sets?", a: "Absolutely. We specialize in industry-specific hiring and can source candidates with precise skill sets and experience levels tailored to your requirements." },
-  { q: "How can I contact Doctor Career Consultancy?", a: "You can reach us through our Contact page, by phone at +91 98765 43210, or by email at info@doctorcareerconsultancy.com." },
+  { q: "How can I contact Doctor Career Consultancy?", a: "You can reach us through our Contact page, by phone at +91 88750 61164, or by email at hr@doctorcareerconsultancy.in." },
 ];
 
 const FAQ = () => (
