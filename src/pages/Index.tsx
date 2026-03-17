@@ -2,19 +2,15 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   ArrowRight, Users, Building2, Target, CheckCircle2,
-  Briefcase, GraduationCap, Car, ShoppingBag, Headphones,
-  Monitor, Settings, Star, Quote
+  Briefcase, GraduationCap, Headphones,
+  Monitor, Settings, Star, Quote, MessageCircle
 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
-import logo from "@/assets/dcc-logo.jpg";
 
 const industries = [
   { icon: Headphones, label: "BPO & Customer Support" },
   { icon: Monitor, label: "Information Technology (IT)" },
   { icon: GraduationCap, label: "Education & Training" },
-  { icon: ShoppingBag, label: "Jewellery Industry" },
-  { icon: Car, label: "Automobile Sector" },
-  { icon: Target, label: "Sales & Marketing" },
   { icon: Settings, label: "Administration & Operations" },
 ];
 
@@ -39,12 +35,6 @@ const testimonials = [
   { name: "Amit Verma", text: "The team at DCC guided me through every step of my career transition. Their industry knowledge is unmatched. Highly recommended!" },
 ];
 
-const jobs = [
-  { title: "Cardiologist", company: "Apollo Hospital", location: "Delhi", salary: "₹3L/month" },
-  { title: "General Physician", company: "Fortis Healthcare", location: "Mumbai", salary: "₹2L/month" },
-  { title: "Orthopedic Surgeon", company: "Max Healthcare", location: "Gurgaon", salary: "₹4L/month" },
-];
-
 const Index = () => (
   <>
     {/* Hero */}
@@ -57,12 +47,9 @@ const Index = () => (
           transition={{ duration: 0.8 }}
           className="max-w-3xl"
         >
-          <div className="flex items-center gap-3 mb-8">
-            <img src={logo} alt="DCC" className="h-16 w-auto rounded-lg" />
-            <span className="text-primary-foreground/60 text-sm font-medium tracking-wider uppercase">
-              Be Wise Take Our Advice
-            </span>
-          </div>
+          <p className="text-primary-foreground/60 text-sm font-medium tracking-wider uppercase mb-4">
+            Best Placement Agency in Jaipur
+          </p>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-6">
             Connecting Skilled Professionals With Leading Organizations
           </h1>
@@ -183,33 +170,67 @@ const Index = () => (
       </div>
     </section>
 
-    {/* Job Opportunities Preview */}
+    {/* Latest Job Opportunity */}
     <section className="section-padding">
       <div className="container-narrow">
         <AnimatedSection>
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Latest Job Opportunities</h2>
-          <p className="text-muted-foreground text-center mb-12">Featured positions from top organizations</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Latest Job Opportunity</h2>
+          <p className="text-muted-foreground text-center mb-12">Featured position — apply now via WhatsApp</p>
         </AnimatedSection>
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
-          {jobs.map((job, i) => (
-            <AnimatedSection key={job.title} delay={i * 0.1}>
-              <div className="glass-card rounded-2xl p-6 hover-lift">
-                <h3 className="font-semibold text-lg mb-2">{job.title}</h3>
-                <p className="text-primary font-medium text-sm mb-1">{job.company}</p>
-                <p className="text-muted-foreground text-sm mb-3">{job.location}</p>
-                <p className="text-foreground font-bold">{job.salary}</p>
-              </div>
-            </AnimatedSection>
-          ))}
-        </div>
-        <div className="text-center">
-          <Link
-            to="/jobs"
-            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3 rounded-xl font-semibold hover-lift text-sm"
-          >
-            View All Jobs <ArrowRight size={18} />
-          </Link>
-        </div>
+        <AnimatedSection>
+          <div className="glass-card rounded-2xl p-8 md:p-10 hover-lift max-w-2xl mx-auto">
+            <h3 className="text-2xl font-bold mb-4">🚀 Urgent Hiring – Customer Support Executive</h3>
+            <p className="text-primary font-medium mb-4">📍 Location: Sitapura, Jaipur</p>
+
+            <div className="mb-4">
+              <p className="font-semibold mb-1">Salary:</p>
+              <ul className="text-muted-foreground space-y-1 ml-4">
+                <li>₹16,000 CTC – Hindi Process</li>
+                <li>₹18,000 CTC – English Process</li>
+              </ul>
+            </div>
+
+            <div className="mb-4">
+              <p className="font-semibold mb-1">Work Details:</p>
+              <ul className="text-muted-foreground space-y-1 ml-4">
+                <li>5 Days Working</li>
+                <li>Rotational Shifts</li>
+                <li>Rotational Week Off</li>
+              </ul>
+            </div>
+
+            <div className="mb-4">
+              <p className="font-semibold mb-1">Eligibility:</p>
+              <ul className="text-muted-foreground space-y-1 ml-4">
+                <li>Good communication skills (Hindi / English)</li>
+                <li>Basic computer knowledge</li>
+                <li>Freshers & experienced both can apply</li>
+              </ul>
+            </div>
+
+            <div className="mb-6">
+              <p className="font-semibold mb-1">Special Perks (For Candidates Outside Jaipur):</p>
+              <ul className="text-muted-foreground space-y-1 ml-4">
+                <li>One-way travel ticket</li>
+                <li>14 Days Free Accommodation</li>
+                <li>₹10,000 Relocation Bonus</li>
+              </ul>
+            </div>
+
+            <p className="text-muted-foreground mb-6">
+              Interested candidates can DM or share their resume on WhatsApp now.
+            </p>
+
+            <a
+              href="https://wa.me/918875061164"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3 rounded-xl font-semibold hover-lift text-sm"
+            >
+              <MessageCircle size={18} /> Apply Now
+            </a>
+          </div>
+        </AnimatedSection>
       </div>
     </section>
 
