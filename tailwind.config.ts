@@ -34,6 +34,10 @@ export default {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
+        success: {
+          DEFAULT: "hsl(var(--success))",
+          foreground: "hsl(var(--success-foreground))",
+        },
         muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
@@ -60,11 +64,37 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        slate: {
+          50: "#F8FAFC",
+          200: "#E2E8F0",
+          400: "#94A3B8",
+          500: "#64748B",
+          800: "#1E293B",
+          950: "#0F172A",
+        },
+        indigo: {
+          500: "#6366F1",
+        },
+        violet: {
+          500: "#A855F7",
+        },
+        emerald: {
+          500: "#22C55E",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        "2xl": "1.25rem",
+        "3xl": "1.5rem",
+      },
+      boxShadow: {
+        soft: "0 4px 20px -8px rgba(15, 23, 42, 0.08)",
+        medium: "0 15px 40px -20px rgba(99, 102, 241, 0.15)",
+        heavy: "0 30px 70px -25px rgba(15, 23, 42, 0.25)",
+        glow: "0 0 25px -5px rgba(99, 102, 241, 0.4)",
+        "glow-emerald": "0 0 25px -5px rgba(34, 197, 94, 0.4)",
       },
       keyframes: {
         "accordion-down": {
