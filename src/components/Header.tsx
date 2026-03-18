@@ -31,7 +31,7 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-card/90 backdrop-blur-xl shadow-sm border-b border-border"
+          ? "bg-background/95 backdrop-blur-xl shadow-sm border-b border-border"
           : "bg-transparent"
       }`}
     >
@@ -50,8 +50,8 @@ const Header = () => {
               to={link.path}
               className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                 location.pathname === link.path
-                  ? "bg-primary text-primary-foreground"
-                  : "text-foreground/70 hover:text-foreground hover:bg-muted"
+                  ? "bg-gradient-accent text-primary-foreground"
+                  : "text-foreground/70 hover:text-foreground hover:bg-secondary"
               }`}
             >
               {link.label}
@@ -61,7 +61,8 @@ const Header = () => {
             href="https://wa.me/918875061164"
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-2 inline-flex items-center gap-2 bg-primary text-primary-foreground px-5 py-2 rounded-lg text-sm font-semibold hover-lift"
+            className="ml-2 inline-flex items-center gap-2 bg-gradient-button text-primary-foreground px-5 py-2 rounded-lg text-sm font-semibold hover:brightness-110 hover:scale-105 transition-all duration-300"
+            style={{ boxShadow: 'var(--shadow-glow)' }}
           >
             <MessageCircle size={16} /> Apply Now
           </a>
@@ -69,7 +70,7 @@ const Header = () => {
 
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden p-2 rounded-lg hover:bg-muted transition-colors text-foreground"
+          className="lg:hidden p-2 rounded-lg hover:bg-secondary transition-colors text-foreground"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -81,7 +82,7 @@ const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-card/95 backdrop-blur-xl border-b border-border overflow-hidden"
+            className="lg:hidden bg-background/95 backdrop-blur-xl border-b border-border overflow-hidden"
           >
             <nav className="container-narrow py-4 flex flex-col gap-1">
               {navLinks.map((link) => (
@@ -90,8 +91,8 @@ const Header = () => {
                   to={link.path}
                   className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
                     location.pathname === link.path
-                      ? "bg-primary text-primary-foreground"
-                      : "text-foreground/70 hover:text-foreground hover:bg-muted"
+                      ? "bg-gradient-accent text-primary-foreground"
+                      : "text-foreground/70 hover:text-foreground hover:bg-secondary"
                   }`}
                 >
                   {link.label}
@@ -101,7 +102,7 @@ const Header = () => {
                 href="https://wa.me/918875061164"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-4 py-3 rounded-lg text-sm font-semibold"
+                className="mt-2 inline-flex items-center justify-center gap-2 bg-gradient-button text-primary-foreground px-4 py-3 rounded-lg text-sm font-semibold"
               >
                 <MessageCircle size={16} /> Apply Now
               </a>

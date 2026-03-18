@@ -13,23 +13,23 @@ const Services = () => (
   <>
     <section className="hero-gradient section-padding text-center">
       <div className="container-narrow">
-        <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-4">Our Services</h1>
-        <p className="text-primary-foreground/70 max-w-2xl mx-auto">
+        <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Our Services</h1>
+        <p className="text-muted-foreground max-w-2xl mx-auto">
           Comprehensive recruitment solutions for employers and job seekers
         </p>
       </div>
     </section>
 
-    <section className="section-padding">
+    <section className="section-padding bg-secondary">
       <div className="container-narrow">
         <div className="grid md:grid-cols-2 gap-8">
           {services.map((s, i) => (
             <AnimatedSection key={s.title} delay={i * 0.1}>
               <div className="glass-card rounded-2xl p-10 hover-lift h-full">
                 <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
-                  <s.icon className="text-primary" size={28} />
+                  <s.icon className="text-accent" size={28} />
                 </div>
-                <h3 className="text-xl font-bold mb-4">{s.title}</h3>
+                <h3 className="text-xl font-bold mb-4 text-foreground">{s.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{s.desc}</p>
               </div>
             </AnimatedSection>
@@ -38,16 +38,17 @@ const Services = () => (
       </div>
     </section>
 
-    <section className="section-padding bg-muted/50">
+    <section className="section-padding">
       <div className="container-narrow text-center">
         <AnimatedSection>
-          <h2 className="text-3xl font-bold mb-6">Ready to Get Started?</h2>
+          <h2 className="text-3xl font-bold mb-6 text-foreground">Ready to Get Started?</h2>
           <p className="text-muted-foreground max-w-xl mx-auto mb-8">
             Contact us today to discuss your recruitment needs or explore career opportunities.
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-xl font-semibold hover-lift text-sm"
+            className="inline-flex items-center gap-2 bg-gradient-button text-primary-foreground px-8 py-4 rounded-xl font-semibold hover:brightness-110 hover:scale-105 transition-all duration-300 text-sm"
+            style={{ boxShadow: 'var(--shadow-glow)' }}
           >
             Contact Us <ArrowRight size={18} />
           </Link>
