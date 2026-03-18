@@ -6,17 +6,17 @@ const Contact = () => {
     <>
       <section className="hero-gradient section-padding text-center">
         <div className="container-narrow">
-          <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-4">Contact Us</h1>
-          <p className="text-primary-foreground/70 max-w-2xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Contact Us</h1>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             Get in touch with our team today
           </p>
         </div>
       </section>
 
-      <section className="section-padding">
+      <section className="section-padding bg-secondary">
         <div className="container-narrow max-w-xl mx-auto">
           <AnimatedSection>
-            <h2 className="text-2xl font-bold mb-8 text-center">Contact Information</h2>
+            <h2 className="text-2xl font-bold mb-8 text-center text-foreground">Contact Information</h2>
             <div className="space-y-6 mb-10">
               {[
                 { icon: Phone, label: "Phone", value: "+91 88750 61164" },
@@ -25,10 +25,10 @@ const Contact = () => {
               ].map((item) => (
                 <div key={item.label} className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                    <item.icon className="text-primary" size={20} />
+                    <item.icon className="text-accent" size={20} />
                   </div>
                   <div>
-                    <p className="font-medium text-sm">{item.label}</p>
+                    <p className="font-medium text-sm text-foreground">{item.label}</p>
                     <p className="text-muted-foreground text-sm">{item.value}</p>
                   </div>
                 </div>
@@ -39,7 +39,8 @@ const Contact = () => {
               href="https://wa.me/918875061164"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3 rounded-xl font-semibold hover-lift text-sm w-full justify-center"
+              className="inline-flex items-center gap-2 bg-gradient-button text-primary-foreground px-8 py-3 rounded-xl font-semibold hover:brightness-110 hover:scale-105 transition-all duration-300 text-sm w-full justify-center"
+              style={{ boxShadow: 'var(--shadow-glow)' }}
             >
               <MessageCircle size={18} /> Chat on WhatsApp Now
             </a>

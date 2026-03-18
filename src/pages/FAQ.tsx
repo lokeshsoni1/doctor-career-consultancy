@@ -20,14 +20,14 @@ const FAQ = () => (
   <>
     <section className="hero-gradient section-padding text-center">
       <div className="container-narrow">
-        <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-4">Frequently Asked Questions</h1>
-        <p className="text-primary-foreground/70 max-w-2xl mx-auto">
+        <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Frequently Asked Questions</h1>
+        <p className="text-muted-foreground max-w-2xl mx-auto">
           Find answers to common questions about our services
         </p>
       </div>
     </section>
 
-    <section className="section-padding">
+    <section className="section-padding bg-secondary">
       <div className="container-narrow max-w-3xl mx-auto">
         <AnimatedSection>
           <Accordion type="single" collapsible className="space-y-3">
@@ -37,7 +37,7 @@ const FAQ = () => (
                 value={`item-${i}`}
                 className="glass-card rounded-2xl px-6 border-none"
               >
-                <AccordionTrigger className="text-left font-semibold text-sm hover:no-underline py-5">
+                <AccordionTrigger className="text-left font-semibold text-sm hover:no-underline py-5 text-foreground">
                   {faq.q}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground text-sm leading-relaxed pb-5">
