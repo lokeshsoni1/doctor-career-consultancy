@@ -61,6 +61,11 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
       },
+      backgroundImage: {
+        'gradient-hero': 'linear-gradient(135deg, #0F172A, #1E293B, #1E40AF)',
+        'gradient-accent': 'linear-gradient(135deg, #4F46E5, #06B6D4)',
+        'gradient-button': 'linear-gradient(135deg, #4F46E5, #06B6D4)',
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
