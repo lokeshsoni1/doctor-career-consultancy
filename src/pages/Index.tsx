@@ -192,7 +192,7 @@ const Index = () => (
       <div className="container-narrow">
         <AnimatedSection>
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-foreground">Latest Job Opportunities</h2>
-          <p className="text-muted-foreground text-center mb-12">Featured positions — apply now via WhatsApp</p>
+          <p className="text-muted-foreground text-center mb-12">Featured positions — apply now</p>
         </AnimatedSection>
         <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {/* Job 0 – Customer Support Executive */}
