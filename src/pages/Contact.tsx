@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
+import { Phone, Mail, MapPin, MessageCircle, Instagram } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 
 const Contact = () => {
