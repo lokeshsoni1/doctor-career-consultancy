@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Instagram } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram, Linkedin, MessageCircle } from "lucide-react";
 import logo from "@/assets/dcc-logo.jpg";
 
 const Footer = () => (
