@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Instagram } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram, Linkedin, MessageCircle } from "lucide-react";
 import logo from "@/assets/dcc-logo.jpg";
 
 const Footer = () => (
@@ -61,14 +61,32 @@ const Footer = () => (
           </ul>
           <div className="mt-4">
             <h4 className="font-semibold mb-2 text-foreground text-sm">Follow Us</h4>
-            <a
-              href="https://www.instagram.com/doctorcareerconsultants?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center text-muted-foreground hover:text-accent hover:scale-110 transition-all duration-200"
-            >
-              <Instagram size={24} />
-            </a>
+            <div className="flex items-center gap-4">
+              <a
+                href="https://www.instagram.com/doctorcareerconsultants?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-muted-foreground hover:text-accent hover:scale-110 transition-all duration-200"
+              >
+                <Instagram size={24} />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/doctor-career-consultancy/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-muted-foreground hover:text-accent hover:scale-110 transition-all duration-200"
+              >
+                <Linkedin size={24} />
+              </a>
+              <a
+                href="https://chat.whatsapp.com/BkykZAe9CTBCdnVS4zKWOK?mode=gi_t"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-muted-foreground hover:text-accent hover:scale-110 transition-all duration-200"
+              >
+                <MessageCircle size={24} />
+              </a>
+            </div>
           </div>
         </div>
       </div>

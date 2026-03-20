@@ -192,7 +192,7 @@ const Index = () => (
       <div className="container-narrow">
         <AnimatedSection>
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-foreground">Latest Job Opportunities</h2>
-          <p className="text-muted-foreground text-center mb-12">Featured positions — apply now via WhatsApp</p>
+          <p className="text-muted-foreground text-center mb-12">Featured positions — apply now</p>
         </AnimatedSection>
         <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {/* Job 0 – Customer Support Executive */}
@@ -233,7 +233,7 @@ const Index = () => (
               </div>
               <p className="text-muted-foreground mb-5 text-sm">Interested candidates can DM or share their resume on WhatsApp now.</p>
               <div className="mt-auto">
-                <a href="https://wa.me/918875061164" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gradient-button text-primary-foreground px-6 py-3 rounded-xl font-semibold hover:brightness-110 hover:scale-105 transition-all duration-300 text-sm" style={{ boxShadow: 'var(--shadow-glow)' }}>
+                <a href="https://forms.gle/pRo9QmQH7uU5Sv868" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gradient-button text-primary-foreground px-6 py-3 rounded-xl font-semibold hover:brightness-110 hover:scale-105 transition-all duration-300 text-sm" style={{ boxShadow: 'var(--shadow-glow)' }}>
                   <MessageCircle size={16} /> Apply Now
                 </a>
               </div>
@@ -282,7 +282,7 @@ const Index = () => (
                 </ul>
               </div>
               <div className="mt-auto">
-                <a href="https://wa.me/918875061164" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gradient-button text-primary-foreground px-6 py-3 rounded-xl font-semibold hover:brightness-110 hover:scale-105 transition-all duration-300 text-sm" style={{ boxShadow: 'var(--shadow-glow)' }}>
+                <a href="https://forms.gle/pRo9QmQH7uU5Sv868" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gradient-button text-primary-foreground px-6 py-3 rounded-xl font-semibold hover:brightness-110 hover:scale-105 transition-all duration-300 text-sm" style={{ boxShadow: 'var(--shadow-glow)' }}>
                   <MessageCircle size={16} /> Apply Now
                 </a>
               </div>
@@ -306,7 +306,7 @@ const Index = () => (
                 <p><span className="font-semibold text-foreground">Interview Mode:</span> <span className="text-muted-foreground">Face to Face & Virtual</span></p>
               </div>
               <div className="mt-auto">
-                <a href="https://wa.me/918875061164" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gradient-button text-primary-foreground px-6 py-3 rounded-xl font-semibold hover:brightness-110 hover:scale-105 transition-all duration-300 text-sm" style={{ boxShadow: 'var(--shadow-glow)' }}>
+                <a href="https://forms.gle/pRo9QmQH7uU5Sv868" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gradient-button text-primary-foreground px-6 py-3 rounded-xl font-semibold hover:brightness-110 hover:scale-105 transition-all duration-300 text-sm" style={{ boxShadow: 'var(--shadow-glow)' }}>
                   <MessageCircle size={16} /> Apply Now
                 </a>
               </div>
@@ -334,7 +334,7 @@ const Index = () => (
                 </ul>
               </div>
               <div className="mt-auto">
-                <a href="https://wa.me/918875061164" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gradient-button text-primary-foreground px-6 py-3 rounded-xl font-semibold hover:brightness-110 hover:scale-105 transition-all duration-300 text-sm" style={{ boxShadow: 'var(--shadow-glow)' }}>
+                <a href="https://forms.gle/pRo9QmQH7uU5Sv868" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gradient-button text-primary-foreground px-6 py-3 rounded-xl font-semibold hover:brightness-110 hover:scale-105 transition-all duration-300 text-sm" style={{ boxShadow: 'var(--shadow-glow)' }}>
                   <MessageCircle size={16} /> Apply Now
                 </a>
               </div>
@@ -389,7 +389,7 @@ const Index = () => (
                 </ul>
               </div>
               <div className="mt-auto">
-                <a href="https://wa.me/918875061164" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gradient-button text-primary-foreground px-6 py-3 rounded-xl font-semibold hover:brightness-110 hover:scale-105 transition-all duration-300 text-sm" style={{ boxShadow: 'var(--shadow-glow)' }}>
+                <a href="https://forms.gle/pRo9QmQH7uU5Sv868" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gradient-button text-primary-foreground px-6 py-3 rounded-xl font-semibold hover:brightness-110 hover:scale-105 transition-all duration-300 text-sm" style={{ boxShadow: 'var(--shadow-glow)' }}>
                   <MessageCircle size={16} /> Apply Now
                 </a>
               </div>

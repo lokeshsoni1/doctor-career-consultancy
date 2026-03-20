@@ -54,7 +54,7 @@ const Jobs = () => {
                 </div>
                 <p className="text-muted-foreground mb-5 text-sm">Interested candidates can DM or share their resume on WhatsApp now.</p>
                 <div className="mt-auto">
-                  <a href="https://wa.me/918875061164" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gradient-button text-primary-foreground px-6 py-3 rounded-xl font-semibold hover:brightness-110 hover:scale-105 transition-all duration-300 text-sm" style={{ boxShadow: 'var(--shadow-glow)' }}>
+                  <a href="https://forms.gle/pRo9QmQH7uU5Sv868" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gradient-button text-primary-foreground px-6 py-3 rounded-xl font-semibold hover:brightness-110 hover:scale-105 transition-all duration-300 text-sm" style={{ boxShadow: 'var(--shadow-glow)' }}>
                     <MessageCircle size={16} /> Apply Now
                   </a>
                 </div>
@@ -103,7 +103,7 @@ const Jobs = () => {
                   </ul>
                 </div>
                 <div className="mt-auto">
-                  <a href="https://wa.me/918875061164" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gradient-button text-primary-foreground px-6 py-3 rounded-xl font-semibold hover:brightness-110 hover:scale-105 transition-all duration-300 text-sm" style={{ boxShadow: 'var(--shadow-glow)' }}>
+                  <a href="https://forms.gle/pRo9QmQH7uU5Sv868" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gradient-button text-primary-foreground px-6 py-3 rounded-xl font-semibold hover:brightness-110 hover:scale-105 transition-all duration-300 text-sm" style={{ boxShadow: 'var(--shadow-glow)' }}>
                     <MessageCircle size={16} /> Apply Now
                   </a>
                 </div>
@@ -127,7 +127,7 @@ const Jobs = () => {
                   <p><span className="font-semibold text-foreground">Interview Mode:</span> <span className="text-muted-foreground">Face to Face & Virtual</span></p>
                 </div>
                 <div className="mt-auto">
-                  <a href="https://wa.me/918875061164" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gradient-button text-primary-foreground px-6 py-3 rounded-xl font-semibold hover:brightness-110 hover:scale-105 transition-all duration-300 text-sm" style={{ boxShadow: 'var(--shadow-glow)' }}>
+                  <a href="https://forms.gle/pRo9QmQH7uU5Sv868" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gradient-button text-primary-foreground px-6 py-3 rounded-xl font-semibold hover:brightness-110 hover:scale-105 transition-all duration-300 text-sm" style={{ boxShadow: 'var(--shadow-glow)' }}>
                     <MessageCircle size={16} /> Apply Now
                   </a>
                 </div>
@@ -155,7 +155,7 @@ const Jobs = () => {
                   </ul>
                 </div>
                 <div className="mt-auto">
-                  <a href="https://wa.me/918875061164" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gradient-button text-primary-foreground px-6 py-3 rounded-xl font-semibold hover:brightness-110 hover:scale-105 transition-all duration-300 text-sm" style={{ boxShadow: 'var(--shadow-glow)' }}>
+                  <a href="https://forms.gle/pRo9QmQH7uU5Sv868" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gradient-button text-primary-foreground px-6 py-3 rounded-xl font-semibold hover:brightness-110 hover:scale-105 transition-all duration-300 text-sm" style={{ boxShadow: 'var(--shadow-glow)' }}>
                     <MessageCircle size={16} /> Apply Now
                   </a>
                 </div>
@@ -210,7 +210,7 @@ const Jobs = () => {
                   </ul>
                 </div>
                 <div className="mt-auto">
-                  <a href="https://wa.me/918875061164" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gradient-button text-primary-foreground px-6 py-3 rounded-xl font-semibold hover:brightness-110 hover:scale-105 transition-all duration-300 text-sm" style={{ boxShadow: 'var(--shadow-glow)' }}>
+                  <a href="https://forms.gle/pRo9QmQH7uU5Sv868" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gradient-button text-primary-foreground px-6 py-3 rounded-xl font-semibold hover:brightness-110 hover:scale-105 transition-all duration-300 text-sm" style={{ boxShadow: 'var(--shadow-glow)' }}>
                     <MessageCircle size={16} /> Apply Now
                   </a>
                 </div>

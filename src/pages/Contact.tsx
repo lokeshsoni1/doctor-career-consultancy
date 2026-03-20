@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, MessageCircle, Instagram } from "lucide-react";
+import { Phone, Mail, MapPin, MessageCircle, Instagram, Linkedin } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 
 const Contact = () => {
@@ -45,6 +45,34 @@ const Contact = () => {
                 <div>
                   <p className="font-medium text-sm text-foreground">Instagram</p>
                   <p className="text-muted-foreground text-sm group-hover:text-accent transition-colors">Follow us on Instagram also</p>
+                </div>
+              </a>
+              <a
+                href="https://www.linkedin.com/company/doctor-career-consultancy/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-4 hover:scale-105 transition-all duration-200 group"
+              >
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                  <Linkedin className="text-accent" size={20} />
+                </div>
+                <div>
+                  <p className="font-medium text-sm text-foreground">LinkedIn</p>
+                  <p className="text-muted-foreground text-sm group-hover:text-accent transition-colors">Connect with us on LinkedIn</p>
+                </div>
+              </a>
+              <a
+                href="https://chat.whatsapp.com/BkykZAe9CTBCdnVS4zKWOK?mode=gi_t"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-4 hover:scale-105 transition-all duration-200 group"
+              >
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                  <MessageCircle className="text-accent" size={20} />
+                </div>
+                <div>
+                  <p className="font-medium text-sm text-foreground">WhatsApp Group</p>
+                  <p className="text-muted-foreground text-sm group-hover:text-accent transition-colors">Join our WhatsApp community</p>
                 </div>
               </a>
             </div>
