@@ -57,22 +57,45 @@ const About = () => (
       </div>
     </section>
 
-    {/* CEO Section */}
+    {/* Leadership Section */}
     <section className="section-padding bg-secondary">
-      <div className="container-narrow max-w-3xl mx-auto text-center">
+      <div className="container-narrow">
         <AnimatedSection>
-          <h2 className="text-3xl font-bold mb-8 text-foreground">Company Leadership</h2>
-          <div className="glass-card rounded-3xl p-10">
-            <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
-              <span className="text-3xl font-bold text-accent">AK</span>
-            </div>
-            <h3 className="text-2xl font-bold mb-1 text-foreground">Anuradha Kadel</h3>
-            <p className="text-accent font-medium mb-4">Owner & CEO</p>
-            <p className="text-muted-foreground leading-relaxed max-w-lg mx-auto">
-              With a passion for connecting talent with opportunity, Anuradha Kadel founded Doctor Career Consultancy with the vision of transforming how organizations find and retain the right professionals.
-            </p>
-          </div>
+          <h2 className="text-3xl font-bold mb-8 text-foreground text-center">Company Leadership</h2>
         </AnimatedSection>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+          {[
+            {
+              initials: "AK",
+              name: "Anuradha Kadel",
+              role: "Owner & CEO",
+              desc: "With a passion for connecting talent with opportunity, Anuradha Kadel founded Doctor Career Consultancy with the vision of transforming how organizations find and retain the right professionals.",
+            },
+            {
+              initials: "AK",
+              name: "Arun Kadel",
+              role: "Co-Founder",
+              desc: "A strategic leader with deep insights into operations and talent management, Arun Kadel plays a key role in driving business growth and building strong client relationships. His focus on efficiency and long-term partnerships strengthens the foundation of the organization.",
+            },
+            {
+              initials: "AK",
+              name: "Abhishek Kadel",
+              role: "Co-Founder",
+              desc: "With a strong understanding of modern recruitment trends and technology-driven hiring, Abhishek Kadel contributes to optimizing processes and enhancing candidate experiences. His forward-thinking approach helps the company stay ahead in a competitive hiring landscape.",
+            },
+          ].map((leader, i) => (
+            <AnimatedSection key={leader.name} delay={i * 0.1} className="h-full">
+              <div className="glass-card rounded-3xl p-10 text-center h-full flex flex-col">
+                <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6 overflow-hidden">
+                  <span className="text-3xl font-bold text-accent">{leader.initials}</span>
+                </div>
+                <h3 className="text-2xl font-bold mb-1 text-foreground">{leader.name}</h3>
+                <p className="text-accent font-medium mb-4">{leader.role}</p>
+                <p className="text-muted-foreground leading-relaxed">{leader.desc}</p>
+              </div>
+            </AnimatedSection>
+          ))}
+        </div>
       </div>
     </section>
   </>
