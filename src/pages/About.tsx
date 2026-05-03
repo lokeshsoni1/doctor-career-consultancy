@@ -99,7 +99,7 @@ const About = () => (
                 </div>
                 <h3 className="text-2xl font-bold mb-1 text-foreground">{leader.name}</h3>
                 <p className="text-accent font-medium mb-4">{leader.role}</p>
-                <p className="text-muted-foreground leading-relaxed">{leader.desc}</p>
+                <p className="text-muted-foreground leading-relaxed whitespace-pre-line">{leader.desc}</p>
               </div>
             </AnimatedSection>
           ))}
