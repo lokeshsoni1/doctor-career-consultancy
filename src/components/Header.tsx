@@ -28,17 +28,17 @@ const Header = () => {
   useEffect(() => setIsOpen(false), [location]);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-[rgba(11,15,25,0.75)] backdrop-blur-md border-b border-[rgba(255,255,255,0.05)] shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="container-narrow flex items-center justify-between h-16 md:h-20">
+    <header className="fixed top-4 left-0 right-0 z-50 px-4 md:px-6 transition-all duration-500">
+      <div
+        className={`container-narrow flex items-center justify-between h-16 md:h-18 px-6 rounded-2xl transition-all duration-500 ${
+          scrolled
+            ? "bg-[rgba(7,10,19,0.75)] backdrop-blur-xl border border-[rgba(255,255,255,0.08)] shadow-[0_12px_40px_rgba(0,0,0,0.45)]"
+            : "bg-[rgba(7,10,19,0.45)] backdrop-blur-md border border-[rgba(255,255,255,0.04)]"
+        }`}
+      >
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="Doctor Career Consultancy" className="h-12 md:h-14 w-auto object-contain" />
-          <span className="hidden sm:block font-bold text-xl md:text-2xl text-foreground leading-tight">
+          <img src={logo} alt="Doctor Career Consultancy" className="h-10 md:h-12 w-auto object-contain rounded-lg" />
+          <span className="hidden sm:block font-bold text-lg md:text-xl text-foreground leading-tight tracking-tight">
             Doctor Career
           </span>
         </Link>
@@ -48,10 +48,10 @@ const Header = () => {
             <Link
               key={link.path}
               to={link.path}
-              className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+              className={`px-3 py-2 rounded-lg text-xs font-semibold tracking-wide uppercase transition-colors duration-300 ${
                 location.pathname === link.path
                   ? "bg-gradient-accent text-primary-foreground"
-                  : "text-foreground/70 hover:text-foreground hover:bg-secondary"
+                  : "text-foreground/75 hover:text-foreground hover:bg-secondary"
               }`}
             >
               {link.label}
@@ -61,10 +61,10 @@ const Header = () => {
             href="https://forms.gle/pRo9QmQH7uU5Sv868"
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-2 inline-flex items-center gap-2 bg-gradient-button text-primary-foreground px-5 py-2 rounded-lg text-sm font-semibold hover:brightness-110 hover:scale-105 transition-all duration-300"
+            className="ml-2 inline-flex items-center gap-2 bg-gradient-button text-primary-foreground px-5 py-2 rounded-lg text-xs font-bold tracking-wide uppercase hover:brightness-110 hover:scale-105 transition-all duration-300"
             style={{ boxShadow: 'var(--shadow-glow)' }}
           >
-            <MessageCircle size={16} /> Apply Now
+            <MessageCircle size={14} /> Apply Now
           </a>
         </nav>
 
@@ -82,14 +82,14 @@ const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-background/95 backdrop-blur-xl border-b border-border overflow-hidden"
+            className="lg:hidden mt-2 bg-[rgba(7,10,19,0.92)] backdrop-blur-xl border border-[rgba(255,255,255,0.08)] rounded-2xl overflow-hidden shadow-2xl"
           >
-            <nav className="container-narrow py-4 flex flex-col gap-1">
+            <nav className="py-4 px-4 flex flex-col gap-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
+                  className={`px-4 py-3 rounded-lg text-xs font-semibold tracking-wide uppercase transition-colors ${
                     location.pathname === link.path
                       ? "bg-gradient-accent text-primary-foreground"
                       : "text-foreground/70 hover:text-foreground hover:bg-secondary"
@@ -102,9 +102,9 @@ const Header = () => {
                 href="https://forms.gle/pRo9QmQH7uU5Sv868"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 inline-flex items-center justify-center gap-2 bg-gradient-button text-primary-foreground px-4 py-3 rounded-lg text-sm font-semibold"
+                className="mt-2 inline-flex items-center justify-center gap-2 bg-gradient-button text-primary-foreground px-4 py-3 rounded-lg text-xs font-bold tracking-wide uppercase"
               >
-                <MessageCircle size={16} /> Apply Now
+                <MessageCircle size={14} /> Apply Now
               </a>
             </nav>
           </motion.div>

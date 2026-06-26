@@ -62,9 +62,9 @@ export default {
         },
       },
       backgroundImage: {
-        'gradient-hero': 'linear-gradient(135deg, #0F172A, #1E293B, #1E40AF)',
-        'gradient-accent': 'linear-gradient(135deg, #4F46E5, #06B6D4)',
-        'gradient-button': 'linear-gradient(135deg, #4F46E5, #06B6D4)',
+        'gradient-hero': 'radial-gradient(circle at 10% 10%, rgba(16, 185, 129, 0.12) 0%, transparent 60%), radial-gradient(circle at 90% 90%, rgba(0, 242, 254, 0.12) 0%, transparent 60%), #070A13',
+        'gradient-accent': 'linear-gradient(135deg, #059669, #00F2FE)',
+        'gradient-button': 'linear-gradient(135deg, #059669, #00F2FE)',
       },
       borderRadius: {
         lg: "var(--radius)",
