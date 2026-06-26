@@ -40,9 +40,9 @@ const testimonials = [
 const Index = () => (
   <>
     {/* Hero */}
-    <section className="hero-gradient relative overflow-hidden min-h-[90vh] flex items-center">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(79,70,229,0.15),transparent_60%)]" />
-      <div className="container-narrow relative z-10 py-20">
+    <section className="hero-gradient relative overflow-hidden min-h-screen flex items-center pt-28 pb-16 md:pt-36 md:pb-24">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(16,185,129,0.06),transparent_60%)]" />
+      <div className="container-narrow relative z-10 py-12">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -50,13 +50,13 @@ const Index = () => (
             transition={{ duration: 0.8 }}
             className="lg:w-[58%] text-left"
           >
-            <p className="text-accent text-sm font-medium tracking-wider uppercase mb-4">
-              Best Placement Agency in Jaipur
-            </p>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight mb-6">
-              Connecting Skilled Professionals With Leading Organizations
+            <span className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-semibold tracking-wider uppercase mb-6 badge-glow">
+              ✨ Best Placement Agency in Jaipur
+            </span>
+            <h1 className="text-3xl md:text-5xl lg:text-[3.25rem] xl:text-6xl font-extrabold text-foreground leading-[1.15] mb-6 tracking-tight">
+              Connecting <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Skilled Professionals</span> With Leading Organizations
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl leading-relaxed">
+            <p className="text-base md:text-lg text-muted-foreground mb-10 max-w-2xl leading-relaxed">
               Your trusted recruitment partner with 7+ years of experience in connecting talented professionals with reputable organizations across multiple industries.
             </p>
             <div className="flex flex-wrap gap-4">
@@ -69,24 +69,29 @@ const Index = () => (
               </Link>
               <Link
                 to="/cv"
-                className="inline-flex items-center gap-2 border-2 border-primary/60 text-foreground px-8 py-4 rounded-xl font-semibold hover:border-primary hover:bg-primary/10 transition-all duration-300 text-sm"
+                className="inline-flex items-center gap-2 border border-primary/30 text-foreground px-8 py-4 rounded-xl font-semibold hover:border-primary hover:bg-primary/5 transition-all duration-300 text-sm"
               >
                 Create Your CV
               </Link>
             </div>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:w-[42%] w-full"
+            className="lg:w-[42%] w-full relative group"
           >
-            <img
-              src={heroImage}
-              alt="Professional recruitment handshake"
-              className="w-full h-auto rounded-2xl shadow-2xl object-cover"
-              loading="eager"
-            />
+            <Tilt>
+              <div className="relative p-2 rounded-2xl bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.05)] shadow-2xl backdrop-blur-md overflow-hidden hover:border-primary/20 transition-all duration-500">
+                <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-primary to-accent opacity-15 blur-xl group-hover:opacity-30 transition-all duration-500" />
+                <img
+                  src={heroImage}
+                  alt="Professional recruitment handshake"
+                  className="w-full h-auto rounded-xl shadow-xl object-cover relative z-10 scale-100 group-hover:scale-[1.02] transition-transform duration-700"
+                  loading="eager"
+                />
+              </div>
+            </Tilt>
           </motion.div>
         </div>
       </div>

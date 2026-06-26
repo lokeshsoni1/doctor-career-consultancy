@@ -55,7 +55,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
       <div className="absolute top-[60%] right-[-10%] w-[600px] h-[600px] rounded-full bg-accent/10 blur-[150px] pointer-events-none z-0" />
 
       <Header />
-      <main className="flex-1 pt-24 md:pt-28 relative z-10">{children}</main>
+      <main className="flex-1 pt-0 relative z-10">{children}</main>
       <Footer />
 
       {/* Floating WhatsApp Button */}
