@@ -3,11 +3,13 @@ import { motion } from "framer-motion";
 import {
   ArrowRight, Users, Building2, Target, CheckCircle2,
   Briefcase, GraduationCap, Headphones,
-  Monitor, Settings, Star, Quote, MessageCircle
+  Monitor, Settings, Star, Quote, MessageCircle,
+  Calendar, ThumbsUp, ShieldCheck
 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import heroImage from "@/assets/hero-recruitment.jpg";
 import { Tilt } from "@/components/Tilt";
+import { TestimonialStack } from "@/components/ui/glass-testimonial-swiper";
 
 const industries = [
   { icon: Headphones, label: "BPO & Customer Support" },
@@ -31,10 +33,37 @@ const reasons = [
   "Commitment to Long-Term Success",
 ];
 
-const testimonials = [
-  { name: "Rajesh Kumar", text: "Doctor Career Consultancy helped me find my dream job in IT within just two weeks. Their team was professional and supportive throughout the process." },
-  { name: "Priya Sharma", text: "As an employer, I've been consistently impressed with the quality of candidates DCC provides. They truly understand our hiring needs." },
-  { name: "Amit Verma", text: "The team at DCC guided me through every step of my career transition. Their industry knowledge is unmatched. Highly recommended!" },
+const testimonialsData = [
+  {
+    id: 1,
+    initials: 'RK',
+    name: 'Rajesh Kumar',
+    role: 'IT Professional',
+    quote: "Doctor Career Consultancy helped me find my dream job in IT within just two weeks. Their team was professional and supportive throughout the process.",
+    tags: [{ text: 'FEATURED', type: 'featured' }, { text: 'IT Placement', type: 'default' }] as { text: string; type: 'featured' | 'default' }[],
+    stats: [{ icon: ShieldCheck, text: 'Verified Placement' }, { icon: Calendar, text: '2 weeks process' }],
+    avatarGradient: 'linear-gradient(135deg, #10b981, #059669)',
+  },
+  {
+    id: 2,
+    initials: 'PS',
+    name: 'Priya Sharma',
+    role: 'HR Manager',
+    quote: "As an employer, I've been consistently impressed with the quality of candidates DCC provides. They truly understand our hiring needs.",
+    tags: [{ text: 'Client Partner', type: 'default' }, { text: 'Recruitment', type: 'default' }] as { text: string; type: 'featured' | 'default' }[],
+    stats: [{ icon: Users, text: '10+ hires' }, { icon: ThumbsUp, text: 'Highly Rated' }],
+    avatarGradient: 'linear-gradient(135deg, #00f2fe, #10b981)',
+  },
+  {
+    id: 3,
+    initials: 'AV',
+    name: 'Amit Verma',
+    role: 'Operations Lead',
+    quote: "The team at DCC guided me through every step of my career transition. Their industry knowledge is unmatched. Highly recommended!",
+    tags: [{ text: 'Career Shift', type: 'default' }] as { text: string; type: 'featured' | 'default' }[],
+    stats: [{ icon: ShieldCheck, text: 'Verified Candidate' }],
+    avatarGradient: 'linear-gradient(135deg, #7c3aed, #00f2fe)',
+  },
 ];
 
 const Index = () => (
@@ -425,23 +454,10 @@ const Index = () => (
         <AnimatedSection>
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-foreground">What Our Clients Say</h2>
         </AnimatedSection>
-        <div className="grid md:grid-cols-3 gap-6">
-          {testimonials.map((t, i) => (
-            <AnimatedSection key={t.name} delay={i * 0.1}>
-              <Tilt className="h-full">
-                <div className="glass-card rounded-2xl p-8 hover-lift h-full">
-                  <Quote className="text-primary/30 mb-4" size={32} />
-                  <p className="text-muted-foreground leading-relaxed mb-6">{t.text}</p>
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                      <Star className="text-accent" size={16} />
-                    </div>
-                    <p className="font-semibold text-sm text-foreground">{t.name}</p>
-                  </div>
-                </div>
-              </Tilt>
-            </AnimatedSection>
-          ))}
+        <div className="mt-8">
+          <AnimatedSection delay={0.2}>
+            <TestimonialStack testimonials={testimonialsData} />
+          </AnimatedSection>
         </div>
       </div>
     </section>

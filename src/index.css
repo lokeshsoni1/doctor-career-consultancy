@@ -45,9 +45,10 @@
     --sidebar-border: 0 0% 15% / 0.4;
     --sidebar-ring: 162 76% 45%;
 
-    --hero-gradient: radial-gradient(circle at 15% 15%, rgba(16, 185, 129, 0.12) 0%, transparent 60%),
+    --hero-gradient: linear-gradient(to bottom, rgba(8, 8, 8, 0.45) 0%, rgba(8, 8, 8, 0.98) 100%),
+                    radial-gradient(circle at 15% 15%, rgba(16, 185, 129, 0.12) 0%, transparent 60%),
                     radial-gradient(circle at 85% 85%, rgba(0, 242, 254, 0.12) 0%, transparent 60%),
-                    #080808;
+                    url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?auto=format&fit=crop&w=1920&q=80');
     --glass-bg: rgba(18, 18, 18, 0.6);
     --glass-border: rgba(255, 255, 255, 0.06);
     --shadow-soft: 0 4px 30px rgba(16, 185, 129, 0.01);
@@ -112,6 +113,9 @@
   }
   .hero-gradient {
     background: var(--hero-gradient);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
   
   /* Buttons & CTAs */
@@ -191,4 +195,33 @@ html.lenis, html.lenis body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Swiper Testimonial Styles */
+.testimonial-card {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, border-color 0.4s ease;
+  will-change: transform, opacity;
+}
+.testimonial-card.is-dragging {
+  transition: none !important;
+  cursor: grabbing !important;
+}
+.pagination-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.pagination-dot:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+.pagination-dot.active {
+  width: 20px;
+  border-radius: 4px;
+  background: #10B981;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
 }
