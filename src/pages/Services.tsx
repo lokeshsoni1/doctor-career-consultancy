@@ -1,6 +1,7 @@
 import { Users, Briefcase, Building2, Target, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import AnimatedSection from "@/components/AnimatedSection";
+import { Tilt } from "@/components/Tilt";
 
 const services = [
   { icon: Users, title: "Recruitment & Staffing", desc: "Helping companies identify and hire skilled professionals for various roles. We source, screen, and present the best candidates to ensure a perfect fit for your organization." },
@@ -25,13 +26,15 @@ const Services = () => (
         <div className="grid md:grid-cols-2 gap-8">
           {services.map((s, i) => (
             <AnimatedSection key={s.title} delay={i * 0.1}>
-              <div className="glass-card rounded-2xl p-10 hover-lift h-full">
-                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
-                  <s.icon className="text-accent" size={28} />
+              <Tilt className="h-full">
+                <div className="glass-card rounded-2xl p-10 hover-lift h-full">
+                  <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+                    <s.icon className="text-accent" size={28} />
+                  </div>
+                  <h3 className="text-xl font-bold mb-4 text-foreground">{s.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{s.desc}</p>
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-foreground">{s.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{s.desc}</p>
-              </div>
+              </Tilt>
             </AnimatedSection>
           ))}
         </div>

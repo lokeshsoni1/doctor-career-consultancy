@@ -3,6 +3,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 import anuradhaImg from "@/assets/anuradha_kadel.jpeg";
 import arunImg from "@/assets/arun_kadel.jpeg";
 import abhishekImg from "@/assets/abhishek_kadel.jpeg";
+import { Tilt } from "@/components/Tilt";
 
 const About = () => (
   <>
@@ -47,13 +48,15 @@ const About = () => (
             { icon: TrendingUp, title: "Long-Term Success", desc: "Focus on sustainable career growth and lasting business partnerships." },
           ].map((item, i) => (
             <AnimatedSection key={item.title} delay={i * 0.1}>
-              <div className="glass-card rounded-2xl p-8 text-center hover-lift">
-                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-5">
-                  <item.icon className="text-accent" size={28} />
+              <Tilt className="h-full">
+                <div className="glass-card rounded-2xl p-8 text-center hover-lift h-full">
+                  <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-5">
+                    <item.icon className="text-accent" size={28} />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-3 text-foreground">{item.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
                 </div>
-                <h3 className="text-lg font-semibold mb-3 text-foreground">{item.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
-              </div>
+              </Tilt>
             </AnimatedSection>
           ))}
         </div>
@@ -88,19 +91,21 @@ const About = () => (
             },
           ].map((leader, i) => (
             <AnimatedSection key={leader.name} delay={i * 0.1} className="h-full">
-              <div className="glass-card rounded-3xl p-10 text-center h-full flex flex-col">
-                <div className="w-24 h-24 rounded-full bg-primary/10 mx-auto mb-6 overflow-hidden">
-                  <img
-                    src={leader.image}
-                    alt={leader.name}
-                    className="w-full h-full object-cover"
-                    style={{ objectPosition: "50% 20%" }}
-                  />
+              <Tilt className="h-full">
+                <div className="glass-card rounded-3xl p-10 text-center h-full flex flex-col">
+                  <div className="w-24 h-24 rounded-full bg-primary/10 mx-auto mb-6 overflow-hidden">
+                    <img
+                      src={leader.image}
+                      alt={leader.name}
+                      className="w-full h-full object-cover"
+                      style={{ objectPosition: "50% 20%" }}
+                    />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-1 text-foreground">{leader.name}</h3>
+                  <p className="text-accent font-medium mb-4">{leader.role}</p>
+                  <p className="text-muted-foreground leading-relaxed whitespace-pre-line">{leader.desc}</p>
                 </div>
-                <h3 className="text-2xl font-bold mb-1 text-foreground">{leader.name}</h3>
-                <p className="text-accent font-medium mb-4">{leader.role}</p>
-                <p className="text-muted-foreground leading-relaxed whitespace-pre-line">{leader.desc}</p>
-              </div>
+              </Tilt>
             </AnimatedSection>
           ))}
         </div>
