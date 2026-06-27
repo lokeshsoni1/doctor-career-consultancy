@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -19,10 +19,30 @@ const industries = [
 ];
 
 const services = [
-  { icon: Users, title: "Recruitment & Staffing", desc: "Helping companies identify and hire skilled professionals for various roles." },
-  { icon: Briefcase, title: "Job Placement Services", desc: "Supporting candidates in finding job opportunities that match their qualifications and career goals." },
-  { icon: Building2, title: "Industry-Specific Hiring", desc: "Providing recruitment solutions tailored to the needs of different industries." },
-  { icon: Target, title: "End-to-End Hiring Support", desc: "From candidate sourcing and screening to interview coordination and final placement." },
+  { 
+    icon: Users, 
+    title: "Recruitment & Staffing", 
+    desc: "Helping companies identify and hire skilled professionals for various roles.",
+    bgImage: "https://res.cloudinary.com/dbpdexty8/image/upload/v1782567787/image5_tcclw7.jpg" 
+  },
+  { 
+    icon: Briefcase, 
+    title: "Job Placement Services", 
+    desc: "Supporting candidates in finding job opportunities that match their qualifications and career goals.",
+    bgImage: "https://res.cloudinary.com/dbpdexty8/image/upload/v1782567788/image7_o7otms.jpg" 
+  },
+  { 
+    icon: Building2, 
+    title: "Industry-Specific Hiring", 
+    desc: "Providing recruitment solutions tailored to the needs of different industries.",
+    bgImage: "https://res.cloudinary.com/dbpdexty8/image/upload/v1782567788/image4_bozjw9.jpg" 
+  },
+  { 
+    icon: Target, 
+    title: "End-to-End Hiring Support", 
+    desc: "From candidate sourcing and screening to interview coordination and final placement.",
+    bgImage: "https://res.cloudinary.com/dbpdexty8/image/upload/v1782567790/image6_bfrfak.jpg" 
+  },
 ];
 
 const reasons = [
@@ -75,12 +95,49 @@ const slideImages = [
 
 const Index = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const servicesContainerRef = useRef<HTMLDivElement>(null);
+  const servicesTrackRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slideImages.length);
     }, 4500);
     return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!servicesContainerRef.current || !servicesTrackRef.current) return;
+
+      if (window.innerWidth < 768) {
+        servicesTrackRef.current.style.transform = 'none';
+        return;
+      }
+
+      const rect = servicesContainerRef.current.getBoundingClientRect();
+      const totalHeight = servicesContainerRef.current.scrollHeight - window.innerHeight;
+      const offsetTop = -rect.top;
+
+      let progress = offsetTop / totalHeight;
+      if (progress < 0) progress = 0;
+      if (progress > 1) progress = 1;
+
+      const trackWidth = servicesTrackRef.current.scrollWidth;
+      const viewportWidth = window.innerWidth;
+      const maxTranslate = Math.max(0, trackWidth - viewportWidth + 64);
+      const xVal = -progress * maxTranslate;
+
+      servicesTrackRef.current.style.transform = `translate3d(${xVal}px, 0px, 0px)`;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, []);
 
   return (
@@ -166,31 +223,66 @@ const Index = () => {
     </section>
 
     {/* Services */}
-    <section className="section-padding">
-      <div className="container-narrow">
-        <AnimatedSection>
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-foreground">Our Services</h2>
-          <p className="text-muted-foreground text-center mb-12 max-w-xl mx-auto">
-            Comprehensive recruitment solutions tailored to your needs
-          </p>
-        </AnimatedSection>
-        <div className="grid md:grid-cols-2 gap-6">
-          {services.map((s, i) => (
-            <AnimatedSection key={s.title} delay={i * 0.1}>
-              <Tilt className="h-full">
-                <div className="glass-card rounded-2xl p-8 hover-lift h-full">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
-                    <s.icon className="text-accent" size={24} />
+    <div ref={servicesContainerRef} className="relative h-[300vh] bg-background">
+      <div className="sticky top-0 h-screen overflow-hidden flex flex-col justify-center">
+        <div className="container-narrow w-full px-4 mb-8">
+          <AnimatedSection>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground text-left">Our Services</h2>
+            <p className="text-muted-foreground text-left max-w-xl">
+              Comprehensive recruitment solutions tailored to your needs
+            </p>
+          </AnimatedSection>
+        </div>
+        
+        {/* Horizontal Track container */}
+        <div className="w-full overflow-x-auto md:overflow-x-visible pb-4 md:pb-0 scrollbar-none">
+          <div 
+            ref={servicesTrackRef}
+            className="flex flex-row gap-8 px-4 md:px-[calc((100vw-1152px)/2)] w-max transition-transform duration-75 ease-out will-change-transform"
+            style={{
+              paddingLeft: 'max(1rem, calc((100vw - 1152px) / 2))',
+              paddingRight: 'max(1rem, calc((100vw - 1152px) / 2))',
+            }}
+          >
+            {services.map((s, i) => (
+              <div 
+                key={s.title}
+                className="w-[420px] h-[500px] rounded-3xl overflow-hidden border border-border flex flex-col justify-end p-6 relative group transition-all duration-300 hover:scale-[1.02] flex-shrink-0"
+                style={{
+                  backgroundImage: `url(${s.bgImage})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  boxShadow: 'var(--shadow-card)',
+                }}
+              >
+                {/* Background overlay gradient inside card for better text blending */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent pointer-events-none" />
+                
+                {/* Glassmorphic White Safe-Zone Layer */}
+                <div 
+                  className="relative z-10 w-full backdrop-blur-md border border-white/20 transition-all duration-300 group-hover:translate-y-[-4px]"
+                  style={{
+                    background: 'rgba(255, 255, 255, 0.75)',
+                    backdropFilter: 'blur(12px)',
+                    WebkitBackdropFilter: 'blur(12px)',
+                    padding: '1.5rem',
+                    borderRadius: '12px',
+                    margin: '0',
+                    boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.08)',
+                  }}
+                >
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
+                    <s.icon className="text-accent" size={20} />
                   </div>
-                  <h3 className="text-xl font-semibold mb-3 text-foreground">{s.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{s.desc}</p>
+                  <h3 className="text-xl font-bold mb-2 text-foreground text-left">{s.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed text-left">{s.desc}</p>
                 </div>
-              </Tilt>
-            </AnimatedSection>
-          ))}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </section>
+    </div>
 
     {/* Industries */}
     <section className="section-padding bg-secondary">
