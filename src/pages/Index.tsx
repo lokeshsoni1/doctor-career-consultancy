@@ -124,7 +124,7 @@ const Index = () => {
 
       const trackWidth = servicesTrackRef.current.scrollWidth;
       const viewportWidth = window.innerWidth;
-      const maxTranslate = Math.max(0, trackWidth - viewportWidth + 64);
+      const maxTranslate = Math.max(0, trackWidth - viewportWidth);
       const xVal = -progress * maxTranslate;
 
       servicesTrackRef.current.style.transform = `translate3d(${xVal}px, 0px, 0px)`;
@@ -223,8 +223,8 @@ const Index = () => {
     </section>
 
     {/* Services */}
-    <div ref={servicesContainerRef} className="relative h-[300vh] bg-background">
-      <div className="sticky top-0 h-screen overflow-hidden flex flex-col justify-center">
+    <div ref={servicesContainerRef} className="relative h-[180vh] bg-background">
+      <div className="sticky top-0 h-screen overflow-hidden flex flex-col justify-center pt-24 pb-8">
         <div className="container-narrow w-full px-4 mb-8">
           <AnimatedSection>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground text-left">Our Services</h2>
