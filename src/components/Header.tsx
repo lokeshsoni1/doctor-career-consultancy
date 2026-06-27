@@ -39,9 +39,16 @@ const Header = () => {
           boxShadow: '0 4px 30px rgba(0, 0, 0, 0.03)',
         }}
       >
-        <Link to="/" className="flex items-center gap-3">
+        <Link
+          to="/"
+          onClick={(e) => {
+            // Scroll smoothly to top
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+          className="flex items-center gap-3"
+        >
           <img src={logo} alt="Doctor Career Consultancy" className="h-10 md:h-12 w-auto object-contain rounded-lg" />
-          <span className="hidden sm:block font-bold text-lg md:text-xl text-foreground leading-tight tracking-tight">
+          <span className="hidden sm:block font-normal text-xl md:text-2xl text-foreground leading-tight tracking-wide" style={{ fontFamily: "'Great Vibes', cursive", background: 'linear-gradient(to right, #0F172A, #0284C7)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
             Doctor Career
           </span>
         </Link>

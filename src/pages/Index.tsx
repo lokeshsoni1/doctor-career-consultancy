@@ -282,18 +282,39 @@ const Index = () => {
     <Case />
 
     {/* Industries */}
-    <section className="section-padding bg-secondary">
+    <section
+      className="section-padding bg-secondary"
+      style={{
+        backgroundImage: 'url("https://res.cloudinary.com/dbpdexty8/image/upload/v1782574162/A_professional_16_9_wide-angle_architectural_202606272054_fuivef.jpg")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'scroll',
+        position: 'relative',
+        zIndex: 1,
+      }}
+    >
+      {/* Smooth glassmorphism layer block */}
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          background: 'rgba(255, 255, 255, 0.65)',
+          backdropFilter: 'blur(12px)',
+          WebkitBackdropFilter: 'blur(12px)',
+          zIndex: -1,
+        }}
+      />
       <div className="container-narrow">
         <AnimatedSection>
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-foreground">Industries We Serve</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-[#0F172A]">Industries We Serve</h2>
         </AnimatedSection>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {industries.map((ind, i) => (
             <AnimatedSection key={ind.label} delay={i * 0.05}>
               <Tilt className="h-full">
-                <div className="glass-card rounded-2xl p-6 text-center hover-lift h-full">
+                <div className="glass-card rounded-2xl p-6 text-center hover-lift h-full" style={{ background: 'rgba(255, 255, 255, 0.5)', border: '1px solid rgba(255, 255, 255, 0.6)' }}>
                   <ind.icon className="mx-auto mb-3 text-accent" size={32} />
-                  <p className="text-sm font-medium text-foreground">{ind.label}</p>
+                  <p className="text-sm font-semibold text-slate-800">{ind.label}</p>
                 </div>
               </Tilt>
             </AnimatedSection>
@@ -333,11 +354,32 @@ const Index = () => {
     </section>
 
     {/* Latest Job Opportunities */}
-    <section className="section-padding bg-secondary">
+    <section
+      className="section-padding bg-secondary"
+      style={{
+        backgroundImage: 'url("https://res.cloudinary.com/dbpdexty8/image/upload/v1782574162/A_professional_16_9_wide-angle_architectural_202606272054_fuivef.jpg")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'scroll',
+        position: 'relative',
+        zIndex: 1,
+      }}
+    >
+      {/* Smooth glassmorphism layer block */}
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          background: 'rgba(255, 255, 255, 0.65)',
+          backdropFilter: 'blur(12px)',
+          WebkitBackdropFilter: 'blur(12px)',
+          zIndex: -1,
+        }}
+      />
       <div className="container-narrow">
         <AnimatedSection>
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-foreground">Latest Job Opportunities</h2>
-          <p className="text-muted-foreground text-center mb-12">Featured positions — apply now</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-[#0F172A]">Latest Job Opportunities</h2>
+          <p className="text-slate-700 text-center mb-12 font-medium">Featured positions — apply now</p>
         </AnimatedSection>
         <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {/* Job 0 – Customer Support Executive */}
@@ -569,14 +611,35 @@ const Index = () => {
     </section>
 
     {/* CTA */}
-    <section className="section-padding bg-secondary">
+    <section
+      className="section-padding bg-secondary"
+      style={{
+        backgroundImage: 'url("https://res.cloudinary.com/dbpdexty8/image/upload/v1782574162/A_professional_16_9_wide-angle_architectural_202606272054_fuivef.jpg")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'scroll',
+        position: 'relative',
+        zIndex: 1,
+      }}
+    >
+      {/* Smooth glassmorphism layer block */}
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          background: 'rgba(255, 255, 255, 0.65)',
+          backdropFilter: 'blur(12px)',
+          WebkitBackdropFilter: 'blur(12px)',
+          zIndex: -1,
+        }}
+      />
       <div className="container-narrow">
         <AnimatedSection>
-          <div className="hero-gradient rounded-3xl p-12 md:p-16 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+          <div className="rounded-3xl p-12 md:p-16 text-center" style={{ background: 'rgba(255, 255, 255, 0.45)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', border: '1px solid rgba(255, 255, 255, 0.6)', boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.03)' }}>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6">
               Ready to Take the Next Step?
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed">
+            <p className="text-slate-700 max-w-2xl mx-auto mb-8 leading-relaxed font-semibold">
               Whether you are a company looking for the right talent or a job seeker searching for the right opportunity, Doctor Career Consultancy is here to guide you.
             </p>
             <Link

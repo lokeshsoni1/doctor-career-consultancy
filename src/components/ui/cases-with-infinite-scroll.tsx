@@ -26,7 +26,28 @@ function Case() {
   }, [api, current]);
 
   return (
-    <div className="w-full py-20 lg:py-32 bg-white">
+    <div
+      className="w-full py-20 lg:py-32"
+      style={{
+        backgroundImage: 'url("https://res.cloudinary.com/dbpdexty8/image/upload/v1782574162/A_professional_16_9_wide-angle_architectural_202606272054_fuivef.jpg")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'scroll',
+        position: 'relative',
+        zIndex: 1,
+      }}
+    >
+      {/* Smooth glassmorphism layer block directly inside section over the image backdrop */}
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          background: 'rgba(255, 255, 255, 0.65)',
+          backdropFilter: 'blur(12px)',
+          WebkitBackdropFilter: 'blur(12px)',
+          zIndex: -1,
+        }}
+      />
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col gap-10">
           <h2 className="text-3xl md:text-5xl tracking-tighter font-bold text-left text-slate-900">
