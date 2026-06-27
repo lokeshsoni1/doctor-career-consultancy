@@ -32,8 +32,8 @@ const Header = () => {
       <div
         className={`container-narrow flex items-center justify-between h-16 md:h-18 px-6 rounded-2xl transition-all duration-500 ${
           scrolled
-            ? "bg-[rgba(7,10,19,0.75)] backdrop-blur-xl border border-[rgba(255,255,255,0.08)] shadow-[0_12px_40px_rgba(0,0,0,0.45)]"
-            : "bg-[rgba(7,10,19,0.45)] backdrop-blur-md border border-[rgba(255,255,255,0.04)]"
+            ? "bg-[rgba(255,255,255,0.85)] backdrop-blur-xl border border-[rgba(15,23,42,0.08)] shadow-[0_12px_40px_rgba(15,23,42,0.08)]"
+            : "bg-[rgba(255,255,255,0.55)] backdrop-blur-md border border-[rgba(15,23,42,0.04)]"
         }`}
       >
         <Link to="/" className="flex items-center gap-3">
@@ -82,7 +82,7 @@ const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden mt-2 bg-[rgba(7,10,19,0.92)] backdrop-blur-xl border border-[rgba(255,255,255,0.08)] rounded-2xl overflow-hidden shadow-2xl"
+            className="lg:hidden mt-2 bg-[rgba(255,255,255,0.96)] backdrop-blur-xl border border-[rgba(15,23,42,0.08)] rounded-2xl overflow-hidden shadow-2xl"
           >
             <nav className="py-4 px-4 flex flex-col gap-1">
               {navLinks.map((link) => (

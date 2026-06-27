@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -7,7 +8,6 @@ import {
   Calendar, ThumbsUp, ShieldCheck
 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
-import heroImage from "@/assets/hero-recruitment.jpg";
 import { Tilt } from "@/components/Tilt";
 import { TestimonialStack } from "@/components/ui/glass-testimonial-swiper";
 
@@ -42,7 +42,7 @@ const testimonialsData = [
     quote: "Doctor Career Consultancy helped me find my dream job in IT within just two weeks. Their team was professional and supportive throughout the process.",
     tags: [{ text: 'FEATURED', type: 'featured' }, { text: 'IT Placement', type: 'default' }] as { text: string; type: 'featured' | 'default' }[],
     stats: [{ icon: ShieldCheck, text: 'Verified Placement' }, { icon: Calendar, text: '2 weeks process' }],
-    avatarGradient: 'linear-gradient(135deg, #10b981, #059669)',
+    avatarGradient: 'linear-gradient(135deg, #0284C7, #0ea5e9)',
   },
   {
     id: 2,
@@ -52,7 +52,7 @@ const testimonialsData = [
     quote: "As an employer, I've been consistently impressed with the quality of candidates DCC provides. They truly understand our hiring needs.",
     tags: [{ text: 'Client Partner', type: 'default' }, { text: 'Recruitment', type: 'default' }] as { text: string; type: 'featured' | 'default' }[],
     stats: [{ icon: Users, text: '10+ hires' }, { icon: ThumbsUp, text: 'Highly Rated' }],
-    avatarGradient: 'linear-gradient(135deg, #00f2fe, #10b981)',
+    avatarGradient: 'linear-gradient(135deg, #00f2fe, #0284C7)',
   },
   {
     id: 3,
@@ -66,62 +66,81 @@ const testimonialsData = [
   },
 ];
 
-const Index = () => (
-  <>
-    {/* Hero */}
-    <section className="hero-gradient relative overflow-hidden min-h-screen flex items-center pt-28 pb-16 md:pt-36 md:pb-24">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(16,185,129,0.06),transparent_60%)]" />
-      <div className="container-narrow relative z-10 py-12">
-        <div className="flex flex-col lg:flex-row items-center gap-12">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="lg:w-[58%] text-left"
-          >
-            <h1 className="text-3xl md:text-5xl lg:text-[3.25rem] xl:text-6xl font-extrabold text-foreground leading-[1.15] mb-6 tracking-tight">
-              Connecting <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Skilled Professionals</span> With Leading Organizations
-            </h1>
-            <p className="text-base md:text-lg text-muted-foreground mb-10 max-w-2xl leading-relaxed">
-              Your trusted recruitment partner with 7+ years of experience in connecting talented professionals with reputable organizations across multiple industries.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link
-                to="/jobs"
-                className="inline-flex items-center gap-2 bg-gradient-button text-primary-foreground px-8 py-4 rounded-xl font-semibold hover:brightness-110 hover:scale-105 transition-all duration-300 text-sm"
-                style={{ boxShadow: 'var(--shadow-glow)' }}
-              >
-                View Job Opportunities <ArrowRight size={18} />
-              </Link>
-              <Link
-                to="/cv"
-                className="inline-flex items-center gap-2 border border-primary/30 text-foreground px-8 py-4 rounded-xl font-semibold hover:border-primary hover:bg-primary/5 transition-all duration-300 text-sm"
-              >
-                Create Your CV
-              </Link>
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:w-[42%] w-full relative group"
-          >
-            <Tilt>
-              <div className="relative p-2 rounded-2xl bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.05)] shadow-2xl backdrop-blur-md overflow-hidden hover:border-primary/20 transition-all duration-500">
-                <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-primary to-accent opacity-15 blur-xl group-hover:opacity-30 transition-all duration-500" />
-                <img
-                  src={heroImage}
-                  alt="Professional recruitment handshake"
-                  className="w-full h-auto rounded-xl shadow-xl object-cover relative z-10 scale-100 group-hover:scale-[1.02] transition-transform duration-700"
-                  loading="eager"
-                />
-              </div>
-            </Tilt>
-          </motion.div>
+const slideImages = [
+  "https://res.cloudinary.com/dbpdexty8/image/upload/v1782564266/image1_cxxsgq.jpg",
+  "https://res.cloudinary.com/dbpdexty8/image/upload/v1782564266/image2_ynzj2g.jpg",
+  "https://res.cloudinary.com/dbpdexty8/image/upload/v1782564267/image4_bozjw9.jpg",
+  "https://res.cloudinary.com/dbpdexty8/image/upload/v1782564268/image3_pzjxbr.jpg",
+];
+
+const Index = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slideImages.length);
+    }, 4500);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <>
+      {/* Hero */}
+      <section className="relative overflow-hidden min-h-screen flex items-center pt-28 pb-16 md:pt-36 md:pb-24">
+        {/* Slideshow background */}
+        <div className="absolute inset-0 z-0">
+          {slideImages.map((img, idx) => (
+            <div
+              key={img}
+              className="absolute inset-0 transition-opacity duration-1000 ease-in-out bg-cover bg-center"
+              style={{
+                backgroundImage: `url(${img})`,
+                opacity: idx === currentSlide ? 1 : 0,
+              }}
+            />
+          ))}
+          {/* Readability overlay */}
+          <div 
+            className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/90 to-white/60 md:bg-gradient-to-r"
+            style={{
+              background: 'linear-gradient(to right, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 60%, rgba(255,255,255,0.5) 100%)'
+            }}
+          />
         </div>
-      </div>
-    </section>
+
+        <div className="container-narrow relative z-10 py-12">
+          <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="w-full flex flex-col items-center"
+            >
+              <h1 className="text-3xl md:text-5xl lg:text-[3.25rem] xl:text-6xl font-extrabold text-foreground leading-[1.15] mb-6 tracking-tight">
+                Connecting <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Skilled Professionals</span> With Leading Organizations
+              </h1>
+              <p className="text-base md:text-lg text-muted-foreground mb-10 max-w-2xl leading-relaxed">
+                Your trusted recruitment partner with 7+ years of experience in connecting talented professionals with reputable organizations across multiple industries.
+              </p>
+              <div className="flex flex-wrap gap-4 justify-center">
+                <Link
+                  to="/jobs"
+                  className="inline-flex items-center gap-2 bg-gradient-button text-primary-foreground px-8 py-4 rounded-xl font-semibold hover:brightness-110 hover:scale-105 transition-all duration-300 text-sm"
+                  style={{ boxShadow: 'var(--shadow-glow)' }}
+                >
+                  View Job Opportunities <ArrowRight size={18} />
+                </Link>
+                <Link
+                  to="/cv"
+                  className="inline-flex items-center gap-2 border border-primary/30 text-foreground px-8 py-4 rounded-xl font-semibold hover:border-primary hover:bg-primary/5 transition-all duration-300 text-sm"
+                >
+                  Create Your CV
+                </Link>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
     {/* Introduction */}
     <section className="section-padding bg-secondary">
@@ -482,6 +501,7 @@ const Index = () => (
       </div>
     </section>
   </>
-);
+  );
+};
 
 export default Index;

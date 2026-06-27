@@ -3,7 +3,6 @@ import { MessageCircle } from "lucide-react";
 import Header from "./Header";
 import Footer from "./Footer";
 import Lenis from "lenis";
-import { StarfieldCanvas } from "./StarfieldCanvas";
 
 const Layout = ({ children }: { children: ReactNode }) => {
   const scrollProgressRef = useRef<HTMLDivElement>(null);
@@ -44,18 +43,12 @@ const Layout = ({ children }: { children: ReactNode }) => {
 
   return (
     <div className="min-h-screen flex flex-col relative overflow-hidden bg-background text-foreground">
-      {/* Starfield Particle Background */}
-      <StarfieldCanvas />
       {/* Scroll Progress Bar */}
       <div 
         ref={scrollProgressRef}
         className="fixed top-0 left-0 h-[3px] bg-gradient-to-r from-primary to-accent z-[100] transition-all duration-100 ease-out"
         style={{ width: '0%' }}
       />
-
-      {/* Background Decorative Mesh Orbs */}
-      <div className="absolute top-[20%] left-[-10%] w-[500px] h-[500px] rounded-full bg-primary/10 blur-[120px] pointer-events-none z-0" />
-      <div className="absolute top-[60%] right-[-10%] w-[600px] h-[600px] rounded-full bg-accent/10 blur-[150px] pointer-events-none z-0" />
 
       <Header />
       <main className="flex-1 pt-0 relative z-10">{children}</main>
