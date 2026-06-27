@@ -96,6 +96,16 @@ export const TestimonialStack = ({ testimonials, visibleBehind = 2 }: Testimonia
           style.zIndex = 0;
         }
 
+        // Combine the existing order styles with custom luxury glassmorphism styles
+        const combinedStyle: CSSProperties = {
+          ...style,
+          background: 'rgba(255, 255, 255, 0.45)',
+          backdropFilter: 'blur(16px)',
+          WebkitBackdropFilter: 'blur(16px)',
+          border: '1px solid rgba(255, 255, 255, 0.6)',
+          boxShadow: '0 8px 32px 0 rgba(160, 140, 120, 0.05)',
+        };
+
         const tagClasses = (type: 'featured' | 'default') => type === 'featured' 
           ? 'bg-primary/20 text-primary border border-primary/30' 
           : 'bg-muted text-muted-foreground border border-border/50';
@@ -104,8 +114,8 @@ export const TestimonialStack = ({ testimonials, visibleBehind = 2 }: Testimonia
           <div
             ref={el => cardRefs.current[index] = el}
             key={testimonial.id}
-            className={`testimonial-card absolute w-full rounded-2xl glass-card cursor-grab active:cursor-grabbing select-none transition-all duration-300 ${isActive ? 'relative z-10' : 'pointer-events-none'}`}
-            style={style}
+            className={`testimonial-card absolute w-full rounded-2xl cursor-grab active:cursor-grabbing select-none transition-all duration-300 ${isActive ? 'relative z-10' : 'pointer-events-none'}`}
+            style={combinedStyle}
             onMouseDown={(e) => handleDragStart(e, index)}
             onTouchStart={(e) => handleDragStart(e, index)}
           >

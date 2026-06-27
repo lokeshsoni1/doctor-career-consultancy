@@ -20,7 +20,7 @@ function Case() {
     const timer = setTimeout(() => {
       api.scrollNext();
       setCurrent((prev) => prev + 1);
-    }, 4000); // Tuned smoothly for 4 seconds reading intervals
+    }, 1800); // Tuned smoothly for 1.8 seconds reading intervals
 
     return () => clearTimeout(timer);
   }, [api, current]);

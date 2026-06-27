@@ -30,34 +30,154 @@ const reasons = [
 const testimonialsData = [
   {
     id: 1,
-    initials: 'RK',
-    name: 'Rajesh Kumar',
-    role: 'IT Professional',
-    quote: "Doctor Career Consultancy helped me find my dream job in IT within just two weeks. Their team was professional and supportive throughout the process.",
-    tags: [{ text: 'FEATURED', type: 'featured' }, { text: 'IT Placement', type: 'default' }] as { text: string; type: 'featured' | 'default' }[],
-    stats: [{ icon: ShieldCheck, text: 'Verified Placement' }, { icon: Calendar, text: '2 weeks process' }],
+    initials: 'RM',
+    name: "Rohan Malhotra",
+    role: "Operations Manager",
+    quote: "The team gave me the exact career roadmap I needed for a leadership pivot. Their placement support helped me secure a premium management role within weeks!",
+    tags: [{ text: 'FEATURED', type: 'featured' }, { text: 'Operations', type: 'default' }] as { text: string; type: 'featured' | 'default' }[],
+    stats: [{ icon: ShieldCheck, text: 'Verified Placement' }, { icon: Calendar, text: '4 weeks process' }],
     avatarGradient: 'linear-gradient(135deg, #0284C7, #0ea5e9)',
   },
   {
     id: 2,
-    initials: 'PS',
-    name: 'Priya Sharma',
-    role: 'HR Manager',
-    quote: "As an employer, I've been consistently impressed with the quality of candidates DCC provides. They truly understand our hiring needs.",
-    tags: [{ text: 'Client Partner', type: 'default' }, { text: 'Recruitment', type: 'default' }] as { text: string; type: 'featured' | 'default' }[],
-    stats: [{ icon: Users, text: '10+ hires' }, { icon: ThumbsUp, text: 'Highly Rated' }],
+    initials: 'PN',
+    name: "Priyanka Nair",
+    role: "HR Specialist",
+    quote: "Highly professional recruitment agency! They guided me through strategic profile building and connected me with top-tier corporate organizations effortlessly.",
+    tags: [{ text: 'Corporate Partner', type: 'default' }, { text: 'HR Specialist', type: 'default' }] as { text: string; type: 'featured' | 'default' }[],
+    stats: [{ icon: ShieldCheck, text: 'Verified Candidate' }],
     avatarGradient: 'linear-gradient(135deg, #00f2fe, #0284C7)',
   },
   {
     id: 3,
-    initials: 'AV',
-    name: 'Amit Verma',
-    role: 'Operations Lead',
-    quote: "The team at DCC guided me through every step of my career transition. Their industry knowledge is unmatched. Highly recommended!",
+    initials: 'AS',
+    name: "Amit Sharma",
+    role: "Business Analyst",
+    quote: "I was confused about changing industries, but their experts pointed me in the right direction and landed me a fantastic corporate strategist role.",
     tags: [{ text: 'Career Shift', type: 'default' }] as { text: string; type: 'featured' | 'default' }[],
-    stats: [{ icon: ShieldCheck, text: 'Verified Candidate' }],
+    stats: [{ icon: ShieldCheck, text: 'Verified Placement' }],
     avatarGradient: 'linear-gradient(135deg, #7c3aed, #00f2fe)',
   },
+  {
+    id: 4,
+    initials: 'SI',
+    name: "Sneha Iyer",
+    role: "Software Engineer",
+    quote: "Brilliant experience. From resume fine-tuning to technical interview prep, their end-to-end guidance was the turning point in my job search journey.",
+    tags: [{ text: 'Engineering', type: 'default' }] as { text: string; type: 'featured' | 'default' }[],
+    stats: [{ icon: ShieldCheck, text: 'Verified Placement' }],
+    avatarGradient: 'linear-gradient(135deg, #f43f5e, #fb7185)',
+  },
+  {
+    id: 5,
+    initials: 'VJ',
+    name: "Vikram Joshi",
+    role: "Project Lead",
+    quote: "They don't just share random job listings; they analyze your core potential and show you the right career path. Highly recommended for professionals!",
+    tags: [{ text: 'Management', type: 'default' }] as { text: string; type: 'featured' | 'default' }[],
+    stats: [{ icon: ShieldCheck, text: 'Verified Candidate' }],
+    avatarGradient: 'linear-gradient(135deg, #10b981, #34d399)',
+  },
+  {
+    id: 6,
+    initials: 'AD',
+    name: "Ananya Desai",
+    role: "Marketing Executive",
+    quote: "Thanks to this agency, I got shortlisted at my dream digital firm. Their mock interview rounds boosted my confidence immensely before the final selection.",
+    tags: [{ text: 'Marketing', type: 'default' }] as { text: string; type: 'featured' | 'default' }[],
+    stats: [{ icon: ShieldCheck, text: 'Verified Placement' }],
+    avatarGradient: 'linear-gradient(135deg, #f59e0b, #fbbf24)',
+  },
+  {
+    id: 7,
+    initials: 'SV',
+    name: "Sandeep Verma",
+    role: "Supply Chain Head",
+    quote: "Incredible network of premium corporate companies. They managed my profile seamlessly and handled the entire salary negotiation process perfectly.",
+    tags: [{ text: 'Supply Chain', type: 'default' }] as { text: string; type: 'featured' | 'default' }[],
+    stats: [{ icon: ShieldCheck, text: 'Verified Placement' }],
+    avatarGradient: 'linear-gradient(135deg, #6366f1, #818cf8)',
+  },
+  {
+    id: 8,
+    initials: 'MK',
+    name: "Meera Krishnan",
+    role: "Talent Acquisition",
+    quote: "The mentorship here is unmatched. They genuinely care about placing you in roles and organizational cultures where you can excel long-term.",
+    tags: [{ text: 'Mentorship', type: 'default' }] as { text: string; type: 'featured' | 'default' }[],
+    stats: [{ icon: ShieldCheck, text: 'Verified Candidate' }],
+    avatarGradient: 'linear-gradient(135deg, #ec4899, #f472b6)',
+  },
+  {
+    id: 9,
+    initials: 'AC',
+    name: "Alok Chawla",
+    role: "Finance Associate",
+    quote: "Outstanding staffing services! They matched my core analytical specialization with the perfect financial institution smoothly and quickly.",
+    tags: [{ text: 'Finance', type: 'default' }] as { text: string; type: 'featured' | 'default' }[],
+    stats: [{ icon: ShieldCheck, text: 'Verified Placement' }],
+    avatarGradient: 'linear-gradient(135deg, #14b8a6, #2dd4bf)',
+  },
+  {
+    id: 10,
+    initials: 'RF',
+    name: "Ritu Fernandez",
+    role: "Customer Success Lead",
+    quote: "Their industry-specific insights helped me pivot my career domain effortlessly. The final placement onboarding support was flawless.",
+    tags: [{ text: 'Customer Success', type: 'default' }] as { text: string; type: 'featured' | 'default' }[],
+    stats: [{ icon: ShieldCheck, text: 'Verified Placement' }],
+    avatarGradient: 'linear-gradient(135deg, #8b5cf6, #a78bfa)',
+  },
+  {
+    id: 11,
+    initials: 'KR',
+    name: "Kavita Rao",
+    role: "Data Scientist",
+    quote: "Finding the right high-growth startup role was stressful until I consulted them. They made the entire interview transit transparent and easy.",
+    tags: [{ text: 'Data Science', type: 'default' }] as { text: string; type: 'featured' | 'default' }[],
+    stats: [{ icon: ShieldCheck, text: 'Verified Placement' }],
+    avatarGradient: 'linear-gradient(135deg, #f97316, #fb923c)',
+  },
+  {
+    id: 12,
+    initials: 'MG',
+    name: "Manish Gupta",
+    role: "Sales Director",
+    quote: "A trusted partner for corporate career growth. They aligned my profile with tech organizations that matched my exact growth criteria.",
+    tags: [{ text: 'Sales', type: 'default' }] as { text: string; type: 'featured' | 'default' }[],
+    stats: [{ icon: ShieldCheck, text: 'Verified Candidate' }],
+    avatarGradient: 'linear-gradient(135deg, #06b6d4, #22d3ee)',
+  },
+  {
+    id: 13,
+    initials: 'DA',
+    name: "Divya Aggarwal",
+    role: "Content Strategist",
+    quote: "Fast, responsive, and highly professional. They mapped my portfolio to an incredible media position that I absolutely love.",
+    tags: [{ text: 'Creative', type: 'default' }] as { text: string; type: 'featured' | 'default' }[],
+    stats: [{ icon: ShieldCheck, text: 'Verified Placement' }],
+    avatarGradient: 'linear-gradient(135deg, #d946ef, #e879f9)',
+  },
+  {
+    id: 14,
+    initials: 'RB',
+    name: "Rahul Bannerjee",
+    role: "Administrative Officer",
+    quote: "They helped me identify my operational strengths and guided me directly to top-tier administrative and facility management roles.",
+    tags: [{ text: 'Operations', type: 'default' }] as { text: string; type: 'featured' | 'default' }[],
+    stats: [{ icon: ShieldCheck, text: 'Verified Candidate' }],
+    avatarGradient: 'linear-gradient(135deg, #64748b, #94a3b8)',
+  },
+  {
+    id: 15,
+    initials: 'NK',
+    name: "Neha Kapoor",
+    role: "Product Manager",
+    quote: "The best decision I made for my career acceleration. Their personalized placement strategy helped me stand out in a highly competitive job market.",
+    tags: [{ text: 'Product Management', type: 'default' }] as { text: string; type: 'featured' | 'default' }[],
+    stats: [{ icon: ShieldCheck, text: 'Verified Placement' }],
+    avatarGradient: 'linear-gradient(135deg, #4f46e5, #6366f1)',
+  }
 ];
 
 const slideImages = [
@@ -72,7 +192,7 @@ const Index = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slideImages.length);
-    }, 4500);
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 
@@ -103,20 +223,20 @@ const Index = () => {
         </div>
 
         <div className="container-narrow relative z-10 py-12 flex items-center min-h-[calc(100vh-140px)]">
-          <div className="flex flex-col items-start text-left max-w-xl lg:max-w-[45%] mr-auto w-full">
+          <div className="flex flex-col items-center text-center md:items-start md:text-left max-w-xl lg:max-w-[45%] mr-auto w-full">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1.2, ease: "easeOut" }}
-              className="w-full flex flex-col items-start"
+              className="w-full flex flex-col items-center md:items-start"
             >
-              <h1 className="text-3xl md:text-5xl lg:text-[3.25rem] xl:text-6xl font-extrabold text-foreground leading-[1.15] mb-6 tracking-tight">
+              <h1 className="text-3xl md:text-5xl lg:text-[3.25rem] xl:text-6xl font-extrabold text-foreground leading-[1.15] mb-6 tracking-tight text-center md:text-left">
                 Connecting <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Skilled Professionals</span> With Leading Organizations
               </h1>
-              <p className="text-base md:text-lg text-muted-foreground mb-10 max-w-xl leading-relaxed">
+              <p className="text-base md:text-lg text-muted-foreground mb-10 max-w-xl leading-relaxed text-center md:text-left mx-auto md:mx-0">
                 Your trusted recruitment partner with 7+ years of experience in connecting talented professionals with reputable organizations across multiple industries.
               </p>
-              <div className="flex flex-wrap gap-4 justify-start">
+              <div className="flex flex-wrap gap-4 justify-center md:justify-start">
                 <Link
                   to="/jobs"
                   className="inline-flex items-center gap-2 bg-gradient-button text-primary-foreground px-8 py-4 rounded-xl font-semibold hover:brightness-110 hover:scale-105 transition-all duration-300 text-sm"
@@ -435,10 +555,10 @@ const Index = () => {
     </section>
 
     {/* Testimonials */}
-    <section className="section-padding">
+    <section className="section-padding" style={{ background: 'linear-gradient(135deg, #FFFDF9 0%, #FDF6EC 50%, #F7EFE5 100%)' }}>
       <div className="container-narrow">
         <AnimatedSection>
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-foreground">What Our Clients Say</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-900">What Our Clients Say</h2>
         </AnimatedSection>
         <div className="mt-8">
           <AnimatedSection delay={0.2}>
