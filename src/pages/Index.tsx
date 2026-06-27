@@ -98,6 +98,8 @@ const Index = () => {
   const servicesContainerRef = useRef<HTMLDivElement>(null);
   const servicesTrackRef = useRef<HTMLDivElement>(null);
 
+  const scrollAccumulator = useRef(0);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slideImages.length);
@@ -106,37 +108,121 @@ const Index = () => {
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (!servicesContainerRef.current || !servicesTrackRef.current) return;
+    const container = servicesContainerRef.current;
+    const track = servicesTrackRef.current;
+    if (!container || !track) return;
 
+    const handleScrollTranslate = () => {
       if (window.innerWidth < 768) {
-        servicesTrackRef.current.style.transform = 'none';
+        track.style.transform = 'none';
         return;
       }
-
-      const rect = servicesContainerRef.current.getBoundingClientRect();
-      const totalHeight = servicesContainerRef.current.scrollHeight - window.innerHeight;
+      const rect = container.getBoundingClientRect();
+      const totalHeight = container.scrollHeight - window.innerHeight;
       const offsetTop = -rect.top;
-
       let progress = offsetTop / totalHeight;
       if (progress < 0) progress = 0;
       if (progress > 1) progress = 1;
 
-      const trackWidth = servicesTrackRef.current.scrollWidth;
+      const trackWidth = track.scrollWidth;
       const viewportWidth = window.innerWidth;
       const maxTranslate = Math.max(0, trackWidth - viewportWidth);
-      const xVal = -progress * maxTranslate;
 
-      servicesTrackRef.current.style.transform = `translate3d(${xVal}px, 0px, 0px)`;
+      scrollAccumulator.current = progress * maxTranslate;
+      track.style.transform = `translate3d(${-scrollAccumulator.current}px, 0px, 0px)`;
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    window.addEventListener("resize", handleScroll);
-    handleScroll();
+    const handleWheel = (e: WheelEvent) => {
+      if (window.innerWidth < 768) return;
+
+      const rect = container.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      const isPinned = rect.top <= 1 && rect.bottom >= viewportHeight - 1;
+
+      if (isPinned) {
+        const trackWidth = track.scrollWidth;
+        const viewportWidth = window.innerWidth;
+        const maxTranslate = Math.max(0, trackWidth - viewportWidth);
+
+        if (scrollAccumulator.current <= 0 && e.deltaY < 0) {
+          return;
+        }
+        if (scrollAccumulator.current >= maxTranslate && e.deltaY > 0) {
+          return;
+        }
+
+        e.preventDefault();
+
+        scrollAccumulator.current += e.deltaY * 0.95;
+        if (scrollAccumulator.current < 0) scrollAccumulator.current = 0;
+        if (scrollAccumulator.current > maxTranslate) scrollAccumulator.current = maxTranslate;
+
+        track.style.transform = `translate3d(${-scrollAccumulator.current}px, 0px, 0px)`;
+
+        const progress = scrollAccumulator.current / maxTranslate;
+        const totalHeight = container.scrollHeight - window.innerHeight;
+        // Target scroll Y is pinned top + scroll ratio
+        const targetScrollY = container.offsetTop + progress * totalHeight;
+        window.scrollTo(0, targetScrollY);
+      }
+    };
+
+    let touchStartY = 0;
+
+    const handleTouchStart = (e: TouchEvent) => {
+      touchStartY = e.touches[0].clientY;
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      if (window.innerWidth < 768) return;
+
+      const rect = container.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      const isPinned = rect.top <= 1 && rect.bottom >= viewportHeight - 1;
+
+      if (isPinned) {
+        const deltaY = e.touches[0].clientY - touchStartY;
+        const trackWidth = track.scrollWidth;
+        const viewportWidth = window.innerWidth;
+        const maxTranslate = Math.max(0, trackWidth - viewportWidth);
+
+        if (scrollAccumulator.current <= 0 && deltaY > 0) {
+          return;
+        }
+        if (scrollAccumulator.current >= maxTranslate && deltaY < 0) {
+          return;
+        }
+
+        e.preventDefault();
+
+        scrollAccumulator.current -= deltaY * 1.5;
+        if (scrollAccumulator.current < 0) scrollAccumulator.current = 0;
+        if (scrollAccumulator.current > maxTranslate) scrollAccumulator.current = maxTranslate;
+
+        track.style.transform = `translate3d(${-scrollAccumulator.current}px, 0px, 0px)`;
+
+        const progress = scrollAccumulator.current / maxTranslate;
+        const totalHeight = container.scrollHeight - window.innerHeight;
+        const targetScrollY = container.offsetTop + progress * totalHeight;
+        window.scrollTo(0, targetScrollY);
+
+        touchStartY = e.touches[0].clientY;
+      }
+    };
+
+    window.addEventListener("scroll", handleScrollTranslate, { passive: true });
+    window.addEventListener("resize", handleScrollTranslate);
+    window.addEventListener("wheel", handleWheel, { passive: false });
+    window.addEventListener("touchstart", handleTouchStart, { passive: true });
+    window.addEventListener("touchmove", handleTouchMove, { passive: false });
+    handleScrollTranslate();
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleScroll);
+      window.removeEventListener("scroll", handleScrollTranslate);
+      window.removeEventListener("resize", handleScrollTranslate);
+      window.removeEventListener("wheel", handleWheel);
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchmove", handleTouchMove);
     };
   }, []);
 
@@ -223,7 +309,7 @@ const Index = () => {
     </section>
 
     {/* Services */}
-    <div ref={servicesContainerRef} className="relative h-[180vh] bg-background">
+    <div ref={servicesContainerRef} className="relative h-[180vh] bg-background m-0 pb-0">
       <div className="sticky top-0 h-screen overflow-hidden flex flex-col justify-center pt-24 pb-8">
         <div className="container-narrow w-full px-4 mb-8">
           <AnimatedSection>
@@ -247,7 +333,7 @@ const Index = () => {
             {services.map((s, i) => (
               <div 
                 key={s.title}
-                className="w-[420px] h-[500px] rounded-3xl overflow-hidden border border-border flex flex-col justify-end p-6 relative group transition-all duration-300 hover:scale-[1.02] flex-shrink-0"
+                className="w-[380px] md:w-[420px] h-[60vh] max-h-[420px] min-h-[350px] rounded-3xl overflow-hidden border border-border flex flex-col justify-end p-5 md:p-6 relative group transition-all duration-300 hover:scale-[1.02] flex-shrink-0"
                 style={{
                   backgroundImage: `url(${s.bgImage})`,
                   backgroundSize: 'cover',
@@ -265,7 +351,7 @@ const Index = () => {
                     background: 'rgba(255, 255, 255, 0.75)',
                     backdropFilter: 'blur(12px)',
                     WebkitBackdropFilter: 'blur(12px)',
-                    padding: '1.5rem',
+                    padding: '1.25rem',
                     borderRadius: '12px',
                     margin: '0',
                     boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.08)',
