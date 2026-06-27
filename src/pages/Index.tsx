@@ -99,30 +99,30 @@ const Index = () => {
               }}
             />
           ))}
-          {/* Readability overlay */}
+          {/* Readability overlay - fades out to transparent on the right */}
           <div 
-            className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/90 to-white/60 md:bg-gradient-to-r"
+            className="absolute inset-0"
             style={{
-              background: 'linear-gradient(to right, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 60%, rgba(255,255,255,0.5) 100%)'
+              background: 'linear-gradient(to right, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.85) 45%, rgba(255,255,255,0) 80%)'
             }}
           />
         </div>
 
         <div className="container-narrow relative z-10 py-12">
-          <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
+          <div className="flex flex-col items-start text-left max-w-2xl mr-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="w-full flex flex-col items-center"
+              className="w-full flex flex-col items-start"
             >
               <h1 className="text-3xl md:text-5xl lg:text-[3.25rem] xl:text-6xl font-extrabold text-foreground leading-[1.15] mb-6 tracking-tight">
                 Connecting <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Skilled Professionals</span> With Leading Organizations
               </h1>
-              <p className="text-base md:text-lg text-muted-foreground mb-10 max-w-2xl leading-relaxed">
+              <p className="text-base md:text-lg text-muted-foreground mb-10 max-w-xl leading-relaxed">
                 Your trusted recruitment partner with 7+ years of experience in connecting talented professionals with reputable organizations across multiple industries.
               </p>
-              <div className="flex flex-wrap gap-4 justify-center">
+              <div className="flex flex-wrap gap-4 justify-start">
                 <Link
                   to="/jobs"
                   className="inline-flex items-center gap-2 bg-gradient-button text-primary-foreground px-8 py-4 rounded-xl font-semibold hover:brightness-110 hover:scale-105 transition-all duration-300 text-sm"
