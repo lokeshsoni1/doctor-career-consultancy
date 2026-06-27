@@ -235,17 +235,26 @@ const Index = () => {
                   <span key={idx} className="hero-word-reveal" style={{ animationDelay: `${idx * 0.1}s` }}>{w}&nbsp;</span>
                 ))}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
-                  {"Skilled Professionals".split(" ").map((w, idx) => (
+                  {"Skilled".split(" ").map((w, idx) => (
                     <span key={idx} className="hero-word-reveal" style={{ animationDelay: `${(idx + 1) * 0.1}s` }}>{w}&nbsp;</span>
                   ))}
+                  {"Professionals".split(" ").map((w, idx) => (
+                    <span key={idx} className="hero-word-reveal" style={{ animationDelay: `${(idx + 2) * 0.1}s` }}>{w}&nbsp;</span>
+                  ))}
                 </span>
-                {"With Leading Organizations".split(" ").map((w, idx) => (
+                {"With".split(" ").map((w, idx) => (
                   <span key={idx} className="hero-word-reveal" style={{ animationDelay: `${(idx + 3) * 0.1}s` }}>{w}&nbsp;</span>
+                ))}
+                {"Leading".split(" ").map((w, idx) => (
+                  <span key={idx} className="hero-word-reveal" style={{ animationDelay: `${(idx + 4) * 0.1}s` }}>{w}&nbsp;</span>
+                ))}
+                {"Organizations".split(" ").map((w, idx) => (
+                  <span key={idx} className="hero-word-reveal" style={{ animationDelay: `${(idx + 5) * 0.1}s` }}>{w}&nbsp;</span>
                 ))}
               </h1>
               <p className="text-base md:text-lg text-muted-foreground mb-10 max-w-xl leading-relaxed text-center md:text-left mx-auto md:mx-0">
                 {"Your trusted recruitment partner with 7+ years of experience in connecting talented professionals with reputable organizations across multiple industries.".split(" ").map((w, idx) => (
-                  <span key={idx} className="hero-word-reveal" style={{ animationDelay: `${(idx + 6) * 0.08}s` }}>{w}&nbsp;</span>
+                  <span key={idx} className="hero-word-reveal" style={{ animationDelay: `${(idx + 6) * 0.04}s` }}>{w}&nbsp;</span>
                 ))}
               </p>
               <div className="flex flex-wrap gap-4 justify-center md:justify-start">
