@@ -9,7 +9,7 @@ const Footer = () => (
         <div className="md:col-span-1">
           <img src={logo} alt="Doctor Career Consultancy" className="h-12 w-auto mb-4 rounded" />
           <p className="text-muted-foreground text-sm leading-relaxed">
-            Best Placement Agency in Jaipur. Your trusted recruitment partner with 7+ years of industry experience.
+            Your trusted recruitment partner with 7+ years of industry experience.
           </p>
         </div>
 

@@ -79,9 +79,6 @@ const Index = () => (
             transition={{ duration: 0.8 }}
             className="lg:w-[58%] text-left"
           >
-            <span className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-semibold tracking-wider uppercase mb-6 badge-glow">
-              ✨ Best Placement Agency in Jaipur
-            </span>
             <h1 className="text-3xl md:text-5xl lg:text-[3.25rem] xl:text-6xl font-extrabold text-foreground leading-[1.15] mb-6 tracking-tight">
               Connecting <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Skilled Professionals</span> With Leading Organizations
             </h1>
