@@ -92,9 +92,10 @@ const Index = () => {
           {slideImages.map((img, idx) => (
             <div
               key={img}
-              className="absolute inset-0 transition-opacity duration-1000 ease-in-out bg-cover bg-center"
+              className="absolute inset-0 transition-opacity duration-1000 ease-in-out bg-cover"
               style={{
                 backgroundImage: `url(${img})`,
+                backgroundPosition: '75% center',
                 opacity: idx === currentSlide ? 1 : 0,
               }}
             />
@@ -102,7 +103,7 @@ const Index = () => {
         </div>
 
         <div className="container-narrow relative z-10 py-12 flex items-center min-h-[calc(100vh-140px)]">
-          <div className="flex flex-col items-start text-left max-w-2xl mr-auto w-full">
+          <div className="flex flex-col items-start text-left max-w-xl mr-auto w-full">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
