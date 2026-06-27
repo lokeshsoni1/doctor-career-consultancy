@@ -30,11 +30,14 @@ const Header = () => {
   return (
     <header className="fixed top-4 left-0 right-0 z-50 px-4 md:px-6 transition-all duration-500">
       <div
-        className={`container-narrow flex items-center justify-between h-16 md:h-18 px-6 rounded-2xl transition-all duration-500 ${
-          scrolled
-            ? "bg-[rgba(255,255,255,0.85)] backdrop-blur-xl border border-[rgba(15,23,42,0.08)] shadow-[0_12px_40px_rgba(15,23,42,0.08)]"
-            : "bg-[rgba(255,255,255,0.55)] backdrop-blur-md border border-[rgba(15,23,42,0.04)]"
-        }`}
+        className="container-narrow flex items-center justify-between h-16 md:h-18 px-6 rounded-2xl transition-all duration-500"
+        style={{
+          background: 'rgba(255, 255, 255, 0.15)',
+          backdropFilter: 'blur(20px)',
+          WebkitBackdropFilter: 'blur(20px)',
+          border: '1px solid rgba(255, 255, 255, 0.25)',
+          boxShadow: '0 4px 30px rgba(0, 0, 0, 0.03)',
+        }}
       >
         <Link to="/" className="flex items-center gap-3">
           <img src={logo} alt="Doctor Career Consultancy" className="h-10 md:h-12 w-auto object-contain rounded-lg" />

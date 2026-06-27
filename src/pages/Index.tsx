@@ -100,10 +100,17 @@ const Index = () => {
               }}
             />
           ))}
+          {/* Asymmetric left-side soft white linear gradient overlay */}
+          <div 
+            className="absolute inset-0 z-0"
+            style={{
+              background: 'linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.6) 40%, rgba(255, 255, 255, 0) 100%)'
+            }}
+          />
         </div>
 
         <div className="container-narrow relative z-10 py-12 flex items-center min-h-[calc(100vh-140px)]">
-          <div className="flex flex-col items-start text-left max-w-xl mr-auto w-full">
+          <div className="flex flex-col items-start text-left max-w-xl lg:max-w-[45%] mr-auto w-full">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
