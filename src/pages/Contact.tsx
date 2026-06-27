@@ -13,10 +13,31 @@ const Contact = () => {
         </div>
       </section>
 
-      <section className="section-padding bg-secondary">
+      <section
+        className="section-padding bg-secondary"
+        style={{
+          backgroundImage: 'url("https://res.cloudinary.com/dbpdexty8/image/upload/v1781410987/samples/canvas.jpg")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'scroll',
+          position: 'relative',
+          zIndex: 1,
+        }}
+      >
+        {/* Soft glassmorphism overlay */}
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'rgba(255, 255, 255, 0.75)',
+            backdropFilter: 'blur(4px)',
+            WebkitBackdropFilter: 'blur(4px)',
+            zIndex: -1,
+          }}
+        />
         <div className="container-narrow max-w-xl mx-auto">
           <AnimatedSection>
-            <h2 className="text-2xl font-bold mb-8 text-center text-foreground">Contact Information</h2>
+            <h2 className="text-2xl font-bold mb-8 text-center text-[#0F172A]">Contact Information</h2>
             <div className="space-y-6 mb-10">
               {[
                 { icon: Phone, label: "Phone", value: "+91 88750 61164" },

@@ -14,7 +14,28 @@ const Jobs = () => {
         </div>
       </section>
 
-      <section className="section-padding bg-secondary">
+      <section
+        className="section-padding bg-secondary"
+        style={{
+          backgroundImage: 'url("https://res.cloudinary.com/dbpdexty8/image/upload/v1781410987/samples/canvas.jpg")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'scroll',
+          position: 'relative',
+          zIndex: 1,
+        }}
+      >
+        {/* Soft glassmorphism overlay */}
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'rgba(255, 255, 255, 0.75)',
+            backdropFilter: 'blur(4px)',
+            WebkitBackdropFilter: 'blur(4px)',
+            zIndex: -1,
+          }}
+        />
         <div className="container-narrow">
           <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {/* Job 0 – Customer Support Executive */}

@@ -48,7 +48,7 @@ const Header = () => {
           className="flex items-center gap-3"
         >
           <img src={logo} alt="Doctor Career Consultancy" className="h-10 md:h-12 w-auto object-contain rounded-lg" />
-          <span className="hidden sm:block font-normal text-xl md:text-2xl text-foreground leading-tight tracking-wide" style={{ fontFamily: "'Great Vibes', cursive", background: 'linear-gradient(to right, #0F172A, #0284C7)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+          <span className="hidden sm:block font-normal text-2xl md:text-3xl text-foreground leading-tight tracking-wide" style={{ fontFamily: "'Great Vibes', cursive", letterSpacing: "0.02em", wordSpacing: "0.05em", background: 'linear-gradient(to right, #0F172A, #0284C7)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', paddingBottom: "2px" }}>
             Doctor Career
           </span>
         </Link>

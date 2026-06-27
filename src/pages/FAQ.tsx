@@ -30,22 +30,52 @@ const FAQ = () => (
     <section className="section-padding bg-secondary">
       <div className="container-narrow max-w-3xl mx-auto">
         <AnimatedSection>
-          <Accordion type="single" collapsible className="space-y-3">
-            {faqs.map((faq, i) => (
-              <AccordionItem
-                key={i}
-                value={`item-${i}`}
-                className="glass-card rounded-2xl px-6 border-none"
-              >
-                <AccordionTrigger className="text-left font-semibold text-sm hover:no-underline py-5 text-foreground">
-                  {faq.q}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground text-sm leading-relaxed pb-5">
-                  {faq.a}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+          <div
+            className="rounded-3xl p-8 md:p-12"
+            style={{
+              backgroundImage: 'url("https://res.cloudinary.com/dbpdexty8/image/upload/v1781410986/samples/cup-on-a-table.jpg")',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              position: 'relative',
+              zIndex: 1,
+              overflow: 'hidden',
+              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.05)',
+            }}
+          >
+            {/* Soft glassmorphism overlay */}
+            <div
+              style={{
+                position: 'absolute',
+                inset: 0,
+                background: 'rgba(255, 255, 255, 0.7)',
+                backdropFilter: 'blur(4px)',
+                WebkitBackdropFilter: 'blur(4px)',
+                zIndex: -1,
+              }}
+            />
+            <Accordion type="single" collapsible className="space-y-3">
+              {faqs.map((faq, i) => (
+                <AccordionItem
+                  key={i}
+                  value={`item-${i}`}
+                  className="rounded-2xl px-6 border-none"
+                  style={{
+                    background: 'rgba(255, 255, 255, 0.8)',
+                    backdropFilter: 'blur(4px)',
+                    WebkitBackdropFilter: 'blur(4px)',
+                    border: '1px solid rgba(255, 255, 255, 0.5)',
+                  }}
+                >
+                  <AccordionTrigger className="text-left font-bold text-sm hover:no-underline py-5 text-[#0F172A]">
+                    {faq.q}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-slate-700 text-sm leading-relaxed pb-5 font-semibold">
+                    {faq.a}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
         </AnimatedSection>
       </div>
     </section>

@@ -2,6 +2,7 @@ import { Users, Briefcase, Building2, Target, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import AnimatedSection from "@/components/AnimatedSection";
 import { Tilt } from "@/components/Tilt";
+import { Case } from "@/components/ui/cases-with-infinite-scroll";
 
 const services = [
   { icon: Users, title: "Recruitment & Staffing", desc: "Helping companies identify and hire skilled professionals for various roles. We source, screen, and present the best candidates to ensure a perfect fit for your organization." },
@@ -21,13 +22,37 @@ const Services = () => (
       </div>
     </section>
 
+    {/* Custom background image overlay mapped with light 4px blur overlay */}
+    <div
+      style={{
+        backgroundImage: 'url("https://res.cloudinary.com/dbpdexty8/image/upload/v1781410987/samples/canvas.jpg")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'scroll',
+        position: 'relative',
+        zIndex: 1,
+      }}
+    >
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          background: 'rgba(255, 255, 255, 0.75)',
+          backdropFilter: 'blur(4px)',
+          WebkitBackdropFilter: 'blur(4px)',
+          zIndex: -1,
+        }}
+      />
+      <Case />
+    </div>
+
     <section className="section-padding bg-secondary">
       <div className="container-narrow">
         <div className="grid md:grid-cols-2 gap-8">
           {services.map((s, i) => (
             <AnimatedSection key={s.title} delay={i * 0.1}>
               <Tilt className="h-full">
-                <div className="glass-card rounded-2xl p-10 hover-lift h-full">
+                <div className="glass-card rounded-2xl p-10 hover-lift h-full" style={{ background: 'rgba(255, 255, 255, 0.75)', backdropFilter: 'blur(4px)', border: '1px solid rgba(255, 255, 255, 0.4)' }}>
                   <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
                     <s.icon className="text-accent" size={28} />
                   </div>

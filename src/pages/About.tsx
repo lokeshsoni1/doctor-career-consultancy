@@ -16,22 +16,46 @@ const About = () => (
       </div>
     </section>
 
-    <section className="section-padding bg-secondary">
+    <section className="section-padding bg-[#F8FAFC]">
       <div className="container-narrow max-w-3xl mx-auto">
         <AnimatedSection>
-          <h2 className="text-3xl font-bold mb-6 text-foreground">Who We Are</h2>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            Doctor Career Consultancy is a professional recruitment firm dedicated to providing reliable hiring solutions for businesses and meaningful career opportunities for candidates.
-          </p>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            Over the years, we have built a strong reputation for delivering efficient recruitment services, quality candidate screening, and timely placements.
-          </p>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            Our expertise and industry connections allow us to support companies in finding skilled professionals while helping candidates secure the right opportunities for career growth.
-          </p>
-          <p className="text-muted-foreground leading-relaxed font-medium">
-            We believe that the right talent drives business success and the right opportunity transforms careers.
-          </p>
+          <div
+            className="rounded-3xl p-10"
+            style={{
+              backgroundImage: 'url("https://res.cloudinary.com/dbpdexty8/image/upload/v1781410986/samples/cup-on-a-table.jpg")',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              position: 'relative',
+              zIndex: 1,
+              overflow: 'hidden',
+              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.05)',
+            }}
+          >
+            {/* Soft glassmorphism overlay */}
+            <div
+              style={{
+                position: 'absolute',
+                inset: 0,
+                background: 'rgba(255, 255, 255, 0.7)',
+                backdropFilter: 'blur(4px)',
+                WebkitBackdropFilter: 'blur(4px)',
+                zIndex: -1,
+              }}
+            />
+            <h2 className="text-3xl font-bold mb-6 text-[#0F172A]">Who We Are</h2>
+            <p className="text-slate-700 leading-relaxed mb-4 font-semibold">
+              Doctor Career Consultancy is a professional recruitment firm dedicated to providing reliable hiring solutions for businesses and meaningful career opportunities for candidates.
+            </p>
+            <p className="text-slate-700 leading-relaxed mb-4 font-semibold">
+              Over the years, we have built a strong reputation for delivering efficient recruitment services, quality candidate screening, and timely placements.
+            </p>
+            <p className="text-slate-700 leading-relaxed mb-4 font-semibold">
+              Our expertise and industry connections allow us to support companies in finding skilled professionals while helping candidates secure the right opportunities for career growth.
+            </p>
+            <p className="text-slate-800 leading-relaxed font-bold">
+              We believe that the right talent drives business success and the right opportunity transforms careers.
+            </p>
+          </div>
         </AnimatedSection>
       </div>
     </section>
@@ -92,7 +116,30 @@ const About = () => (
           ].map((leader, i) => (
             <AnimatedSection key={leader.name} delay={i * 0.1} className="h-full">
               <Tilt className="h-full">
-                <div className="glass-card rounded-3xl p-10 text-center h-full flex flex-col">
+                <div
+                  className="rounded-3xl p-10 text-center h-full flex flex-col hover-lift"
+                  style={{
+                    backgroundImage: 'url("https://res.cloudinary.com/dbpdexty8/image/upload/v1781410986/samples/cup-on-a-table.jpg")',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    position: 'relative',
+                    zIndex: 1,
+                    overflow: 'hidden',
+                    border: '1px solid rgba(255, 255, 255, 0.5)',
+                    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.05)',
+                  }}
+                >
+                  {/* Soft glassmorphism overlay */}
+                  <div
+                    style={{
+                      position: 'absolute',
+                      inset: 0,
+                      background: 'rgba(255, 255, 255, 0.7)',
+                      backdropFilter: 'blur(4px)',
+                      WebkitBackdropFilter: 'blur(4px)',
+                      zIndex: -1,
+                    }}
+                  />
                   <div className="w-24 h-24 rounded-full bg-primary/10 mx-auto mb-6 overflow-hidden">
                     <img
                       src={leader.image}
@@ -101,9 +148,9 @@ const About = () => (
                       style={{ objectPosition: "50% 20%" }}
                     />
                   </div>
-                  <h3 className="text-2xl font-bold mb-1 text-foreground">{leader.name}</h3>
-                  <p className="text-accent font-medium mb-4">{leader.role}</p>
-                  <p className="text-muted-foreground leading-relaxed whitespace-pre-line">{leader.desc}</p>
+                  <h3 className="text-2xl font-bold mb-1 text-[#0F172A]">{leader.name}</h3>
+                  <p className="text-accent font-semibold mb-4">{leader.role}</p>
+                  <p className="text-slate-800 leading-relaxed font-semibold whitespace-pre-line text-sm">{leader.desc}</p>
                 </div>
               </Tilt>
             </AnimatedSection>

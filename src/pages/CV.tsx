@@ -11,14 +11,42 @@ const CV = () => (
       </div>
     </section>
 
-    <section className="py-4 bg-secondary">
+    <section
+      className="py-4 bg-secondary"
+      style={{
+        backgroundImage: 'url("https://res.cloudinary.com/dbpdexty8/image/upload/v1781410987/samples/canvas.jpg")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'scroll',
+        position: 'relative',
+        zIndex: 1,
+      }}
+    >
+      {/* Soft glassmorphism overlay */}
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          background: 'rgba(255, 255, 255, 0.75)',
+          backdropFilter: 'blur(4px)',
+          WebkitBackdropFilter: 'blur(4px)',
+          zIndex: -1,
+        }}
+      />
       <div className="container-narrow">
         <AnimatedSection>
-          <div className="rounded-2xl overflow-hidden border border-border bg-card" style={{ height: "80vh" }}>
+          <div className="rounded-2xl overflow-hidden border border-border bg-card">
             <iframe
               src="https://resume-maker-ai-seven.vercel.app"
               title="Resume Maker"
-              className="w-full h-full border-0"
+              style={{
+                width: '100%',
+                minHeight: '85vh',
+                border: 'none',
+                outline: 'none',
+                margin: 0,
+                display: 'block',
+              }}
               allow="clipboard-write"
             />
           </div>
