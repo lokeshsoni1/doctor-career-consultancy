@@ -198,22 +198,41 @@ html.lenis, html.lenis body {
   transition: none !important;
   cursor: grabbing !important;
 }
-.pagination-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(15, 23, 42, 0.2);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  border: none;
-  cursor: pointer;
-  padding: 0;
+/* Premium Typing Reveal Animation for Logo Brand */
+.logo-typing-reveal {
+  overflow: hidden;
+  border-right: 2px solid rgba(2, 132, 199, 0.75); /* typing cursor */
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  animation: 
+    typingEffect 1.5s steps(20, end) forwards,
+    typingCursorHide 0.5s ease-out 2.0s forwards;
 }
-.pagination-dot:hover {
-  background: rgba(15, 23, 42, 0.4);
+
+@keyframes typingEffect {
+  from { width: 0 }
+  to { width: 100% }
 }
-.pagination-dot.active {
-  width: 20px;
-  border-radius: 4px;
-  background: #0284C7;
-  box-shadow: 0 0 10px rgba(2, 132, 199, 0.3);
+
+@keyframes typingCursorHide {
+  from { border-right-color: rgba(2, 132, 199, 0.75) }
+  to { border-right-color: transparent }
+}
+
+/* Cinematic Hero Word-by-Word Reveal */
+@keyframes cinematicWordReveal {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.hero-word-reveal {
+  opacity: 0;
+  display: inline-block;
+  animation: cinematicWordReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }

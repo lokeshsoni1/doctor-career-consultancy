@@ -46,26 +46,6 @@ const Services = () => (
       <Case />
     </div>
 
-    <section className="section-padding bg-secondary">
-      <div className="container-narrow">
-        <div className="grid md:grid-cols-2 gap-8">
-          {services.map((s, i) => (
-            <AnimatedSection key={s.title} delay={i * 0.1}>
-              <Tilt className="h-full">
-                <div className="glass-card rounded-2xl p-10 hover-lift h-full" style={{ background: 'rgba(255, 255, 255, 0.75)', backdropFilter: 'blur(4px)', border: '1px solid rgba(255, 255, 255, 0.4)' }}>
-                  <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
-                    <s.icon className="text-accent" size={28} />
-                  </div>
-                  <h3 className="text-xl font-bold mb-4 text-foreground">{s.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{s.desc}</p>
-                </div>
-              </Tilt>
-            </AnimatedSection>
-          ))}
-        </div>
-      </div>
-    </section>
-
     <section className="section-padding">
       <div className="container-narrow text-center">
         <AnimatedSection>
