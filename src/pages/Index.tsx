@@ -99,21 +99,14 @@ const Index = () => {
               }}
             />
           ))}
-          {/* Readability overlay - fades out to transparent on the right */}
-          <div 
-            className="absolute inset-0"
-            style={{
-              background: 'linear-gradient(to right, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.85) 45%, rgba(255,255,255,0) 80%)'
-            }}
-          />
         </div>
 
-        <div className="container-narrow relative z-10 py-12">
-          <div className="flex flex-col items-start text-left max-w-2xl mr-auto">
+        <div className="container-narrow relative z-10 py-12 flex items-center min-h-[calc(100vh-140px)]">
+          <div className="flex flex-col items-start text-left max-w-2xl mr-auto w-full">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1.2, ease: "easeOut" }}
               className="w-full flex flex-col items-start"
             >
               <h1 className="text-3xl md:text-5xl lg:text-[3.25rem] xl:text-6xl font-extrabold text-foreground leading-[1.15] mb-6 tracking-tight">
