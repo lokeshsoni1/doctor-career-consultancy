@@ -231,26 +231,12 @@ const Index = () => {
               className="w-full flex flex-col items-center md:items-start"
             >
               <h1 className="text-3xl md:text-5xl lg:text-[3.25rem] xl:text-6xl font-extrabold text-foreground leading-[1.15] mb-6 tracking-tight text-center md:text-left">
-                {"Connecting".split(" ").map((w, idx) => (
-                  <span key={idx} className="hero-word-reveal" style={{ animationDelay: `${idx * 0.1}s` }}>{w}&nbsp;</span>
-                ))}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
-                  {"Skilled".split(" ").map((w, idx) => (
-                    <span key={idx} className="hero-word-reveal" style={{ animationDelay: `${(idx + 1) * 0.1}s` }}>{w}&nbsp;</span>
-                  ))}
-                  {"Professionals".split(" ").map((w, idx) => (
-                    <span key={idx} className="hero-word-reveal" style={{ animationDelay: `${(idx + 2) * 0.1}s` }}>{w}&nbsp;</span>
-                  ))}
-                </span>
-                {"With".split(" ").map((w, idx) => (
-                  <span key={idx} className="hero-word-reveal" style={{ animationDelay: `${(idx + 3) * 0.1}s` }}>{w}&nbsp;</span>
-                ))}
-                {"Leading".split(" ").map((w, idx) => (
-                  <span key={idx} className="hero-word-reveal" style={{ animationDelay: `${(idx + 4) * 0.1}s` }}>{w}&nbsp;</span>
-                ))}
-                {"Organizations".split(" ").map((w, idx) => (
-                  <span key={idx} className="hero-word-reveal" style={{ animationDelay: `${(idx + 5) * 0.1}s` }}>{w}&nbsp;</span>
-                ))}
+                <span className="hero-word-reveal" style={{ animationDelay: "0s" }}>Connecting&nbsp;</span>
+                <span className="hero-word-reveal text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent" style={{ animationDelay: "0.1s" }}>Skilled&nbsp;</span>
+                <span className="hero-word-reveal text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent" style={{ animationDelay: "0.2s" }}>Professionals&nbsp;</span>
+                <span className="hero-word-reveal" style={{ animationDelay: "0.3s" }}>With&nbsp;</span>
+                <span className="hero-word-reveal" style={{ animationDelay: "0.4s" }}>Leading&nbsp;</span>
+                <span className="hero-word-reveal" style={{ animationDelay: "0.5s" }}>Organizations&nbsp;</span>
               </h1>
               <p className="text-base md:text-lg text-muted-foreground mb-10 max-w-xl leading-relaxed text-center md:text-left mx-auto md:mx-0">
                 {"Your trusted recruitment partner with 7+ years of experience in connecting talented professionals with reputable organizations across multiple industries.".split(" ").map((w, idx) => (
