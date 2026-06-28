@@ -28,7 +28,7 @@ const FAQ = () => (
     </section>
 
     <section
-      className="section-padding bg-secondary"
+      className="section-padding bg-secondary lazy-paint"
       style={{
         backgroundImage: 'url("https://res.cloudinary.com/dbpdexty8/image/upload/v1781410986/samples/cup-on-a-table.jpg")',
         backgroundSize: 'cover',

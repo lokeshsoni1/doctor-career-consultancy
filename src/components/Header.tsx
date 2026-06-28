@@ -21,7 +21,7 @@ const Header = () => {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -30,15 +30,23 @@ const Header = () => {
   return (
     <header className="fixed top-4 left-0 right-0 z-50 px-4 md:px-6 transition-all duration-500">
       <div
-        className="container-narrow flex items-center justify-between h-16 md:h-18 px-6 rounded-2xl transition-all duration-500"
+        className="container-narrow flex items-center justify-between h-16 md:h-18 px-6 rounded-2xl transition-all duration-500 relative overflow-hidden"
         style={{
-          background: 'rgba(255, 255, 255, 0.15)',
-          backdropFilter: 'blur(20px)',
-          WebkitBackdropFilter: 'blur(20px)',
           border: '1px solid rgba(255, 255, 255, 0.25)',
           boxShadow: '0 4px 30px rgba(0, 0, 0, 0.03)',
+          willChange: 'transform, opacity',
         }}
       >
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'rgba(255, 255, 255, 0.15)',
+            backdropFilter: 'blur(20px)',
+            WebkitBackdropFilter: 'blur(20px)',
+            zIndex: -1,
+          }}
+        />
         <Link
           to="/"
           onClick={(e) => {
@@ -110,8 +118,19 @@ const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden mt-2 bg-[rgba(255,255,255,0.96)] backdrop-blur-xl border border-[rgba(15,23,42,0.08)] rounded-2xl overflow-hidden shadow-2xl"
+            className="lg:hidden mt-2 border border-[rgba(15,23,42,0.08)] rounded-2xl overflow-hidden shadow-2xl relative"
+            style={{ willChange: 'transform, opacity' }}
           >
+            <div
+              style={{
+                position: 'absolute',
+                inset: 0,
+                background: 'rgba(255, 255, 255, 0.96)',
+                backdropFilter: 'blur(24px)',
+                WebkitBackdropFilter: 'blur(24px)',
+                zIndex: -1,
+              }}
+            />
             <nav className="py-4 px-4 flex flex-col gap-1">
               {navLinks.map((link) => (
                 <Link

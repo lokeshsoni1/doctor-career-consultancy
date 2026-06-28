@@ -4,14 +4,22 @@ import logo from "@/assets/dcc-logo.jpg";
 
 const Footer = () => (
   <footer
+    className="relative overflow-hidden lazy-paint"
     style={{
-      background: 'rgba(255, 255, 255, 0.25)',
-      backdropFilter: 'blur(24px)',
-      WebkitBackdropFilter: 'blur(24px)',
       borderTop: '1px solid rgba(255, 255, 255, 0.4)',
       boxShadow: '0 -10px 30px rgba(0, 0, 0, 0.02)',
     }}
   >
+    <div
+      style={{
+        position: 'absolute',
+        inset: 0,
+        background: 'rgba(255, 255, 255, 0.25)',
+        backdropFilter: 'blur(24px)',
+        WebkitBackdropFilter: 'blur(24px)',
+        zIndex: -1,
+      }}
+    />
     <div className="container-narrow section-padding pb-8">
       <div className="grid md:grid-cols-4 gap-12 mb-12">
         <div className="md:col-span-1">

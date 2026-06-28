@@ -4,6 +4,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 const Contact = () => {
   return (
     <div
+      className="lazy-paint"
       style={{
         backgroundImage: 'url("https://res.cloudinary.com/dbpdexty8/image/upload/v1781410987/samples/canvas.jpg")',
         backgroundSize: 'cover',

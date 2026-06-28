@@ -57,10 +57,10 @@ export const TestimonialStack = ({ testimonials, visibleBehind = 2 }: Testimonia
 
   useEffect(() => {
     if (isDragging) {
-      window.addEventListener('mousemove', handleDragMove);
-      window.addEventListener('touchmove', handleDragMove);
-      window.addEventListener('mouseup', handleDragEnd);
-      window.addEventListener('touchend', handleDragEnd);
+      window.addEventListener('mousemove', handleDragMove, { passive: true });
+      window.addEventListener('touchmove', handleDragMove, { passive: true });
+      window.addEventListener('mouseup', handleDragEnd, { passive: true });
+      window.addEventListener('touchend', handleDragEnd, { passive: true });
     }
     return () => {
       window.removeEventListener('mousemove', handleDragMove);

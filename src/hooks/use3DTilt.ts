@@ -35,8 +35,8 @@ export const use3DTilt = (maxTilt = 6) => {
       });
     };
 
-    el.addEventListener("mousemove", handleMouseMove);
-    el.addEventListener("mouseleave", handleMouseLeave);
+    el.addEventListener("mousemove", handleMouseMove, { passive: true });
+    el.addEventListener("mouseleave", handleMouseLeave, { passive: true });
 
     return () => {
       el.removeEventListener("mousemove", handleMouseMove);

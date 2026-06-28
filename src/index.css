@@ -82,19 +82,50 @@
 
 @layer components {
   .glass-card {
-    background: var(--glass-bg);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    position: relative;
+    overflow: hidden;
+    background: transparent;
     border: 1px solid var(--glass-border);
     box-shadow: var(--shadow-card);
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     transform-style: preserve-3d;
-    will-change: transform, border-color, box-shadow;
+  }
+  .glass-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    z-index: -1;
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .glass-card:hover {
     border-color: rgba(2, 132, 199, 0.15);
     box-shadow: var(--shadow-elevated);
   }
+  
+  /* 120FPS GPU Promotion for major sections & typography */
+  section, 
+  .section-padding, 
+  header, 
+  footer, 
+  .glass-card, 
+  h1, h2, h3, h4, h5, h6, 
+  p, span, li {
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  /* Below-the-Fold Lazy Painting */
+  .lazy-paint {
+    content-visibility: auto;
+    contain-intrinsic-size: 1000px;
+  }
+
   .section-padding {
     @apply py-20 md:py-28 px-4;
   }

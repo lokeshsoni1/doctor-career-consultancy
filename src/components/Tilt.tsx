@@ -41,8 +41,8 @@ export const Tilt = ({ children, maxTilt = 5, className = "" }: TiltProps) => {
       });
     };
 
-    el.addEventListener("mousemove", handleMouseMove);
-    el.addEventListener("mouseleave", handleMouseLeave);
+    el.addEventListener("mousemove", handleMouseMove, { passive: true });
+    el.addEventListener("mouseleave", handleMouseLeave, { passive: true });
 
     return () => {
       el.removeEventListener("mousemove", handleMouseMove);
