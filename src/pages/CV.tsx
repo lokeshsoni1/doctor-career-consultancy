@@ -33,9 +33,9 @@ const CV = () => (
           zIndex: -1,
         }}
       />
-      <div className="container-narrow">
+      <div className="w-full max-w-full px-0 mx-0">
         <AnimatedSection>
-          <div className="rounded-2xl overflow-hidden border border-border bg-card">
+          <div className="w-full overflow-hidden">
             <iframe
               src="https://resume-maker-ai-seven.vercel.app"
               title="Resume Maker"

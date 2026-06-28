@@ -41,7 +41,7 @@ const Jobs = () => {
             {/* Job 0 – Customer Support Executive */}
             <AnimatedSection>
               <Tilt className="h-full">
-                <div className="glass-card rounded-2xl p-8 hover-lift h-full flex flex-col">
+                <div className="glass-card rounded-2xl p-8 hover-lift h-full flex flex-col" style={{ background: '#FFFFFF', border: '1px solid rgba(15, 23, 42, 0.1)' }}>
                   <h3 className="text-xl font-bold mb-3 text-foreground">🚀 Urgent Hiring – Customer Support Executive</h3>
                   <p className="text-accent font-medium mb-4">📍 Location: Sitapura, Jaipur</p>
                   <div className="mb-3">
@@ -88,7 +88,7 @@ const Jobs = () => {
             {/* Job 1 – International Chat Process */}
             <AnimatedSection delay={0.1}>
               <Tilt className="h-full">
-                <div className="glass-card rounded-2xl p-8 hover-lift h-full flex flex-col">
+                <div className="glass-card rounded-2xl p-8 hover-lift h-full flex flex-col" style={{ background: '#FFFFFF', border: '1px solid rgba(15, 23, 42, 0.1)' }}>
                   <h3 className="text-xl font-bold mb-3 text-foreground">💬 International Chat Process</h3>
                   <div className="mb-3">
                     <p className="font-semibold mb-1 text-foreground">Must have skills:</p>
@@ -139,7 +139,7 @@ const Jobs = () => {
             {/* Job 2 – Travel Chat Process */}
             <AnimatedSection delay={0.2}>
               <Tilt className="h-full">
-                <div className="glass-card rounded-2xl p-8 hover-lift h-full flex flex-col">
+                <div className="glass-card rounded-2xl p-8 hover-lift h-full flex flex-col" style={{ background: '#FFFFFF', border: '1px solid rgba(15, 23, 42, 0.1)' }}>
                   <h3 className="text-xl font-bold mb-3 text-foreground">✈️ Travel Chat Process</h3>
                   <p className="text-accent font-medium mb-4">📍 Location: Jaipur</p>
                   <div className="space-y-2 text-sm mb-4">
@@ -165,7 +165,7 @@ const Jobs = () => {
             {/* Job 3 – Technical Support Executive */}
             <AnimatedSection delay={0.3}>
               <Tilt className="h-full">
-                <div className="glass-card rounded-2xl p-8 hover-lift h-full flex flex-col">
+                <div className="glass-card rounded-2xl p-8 hover-lift h-full flex flex-col" style={{ background: '#FFFFFF', border: '1px solid rgba(15, 23, 42, 0.1)' }}>
                   <h3 className="text-xl font-bold mb-3 text-foreground">🖥️ Technical Support Executive</h3>
                   <div className="mb-3">
                     <p className="font-semibold mb-1 text-foreground">Salary:</p>
@@ -195,7 +195,7 @@ const Jobs = () => {
             {/* Job 4 – Email Support Executive */}
             <AnimatedSection delay={0.4}>
               <Tilt className="h-full md:col-span-2 max-w-2xl mx-auto w-full">
-                <div className="glass-card rounded-2xl p-8 hover-lift h-full flex flex-col">
+                <div className="glass-card rounded-2xl p-8 hover-lift h-full flex flex-col" style={{ background: '#FFFFFF', border: '1px solid rgba(15, 23, 42, 0.1)' }}>
                   <h3 className="text-xl font-bold mb-3 text-foreground">📧 Email Support Executive – Jaipur</h3>
                   <div className="mb-3">
                     <p className="font-semibold mb-1 text-foreground">CTC:</p>
