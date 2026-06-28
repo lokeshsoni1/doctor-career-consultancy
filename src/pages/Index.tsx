@@ -230,13 +230,12 @@ const Index = () => {
               transition={{ duration: 1.2, ease: "easeOut" }}
               className="w-full flex flex-col items-center md:items-start"
             >
-              <h1 className="text-3xl md:text-5xl lg:text-[3.25rem] xl:text-6xl font-extrabold text-foreground leading-[1.15] mb-6 tracking-tight text-center md:text-left">
-                <span className="hero-word-reveal" style={{ animationDelay: "0s" }}>Connecting&nbsp;</span>
-                <span className="hero-word-reveal text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent" style={{ animationDelay: "0.1s" }}>Skilled&nbsp;</span>
-                <span className="hero-word-reveal text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent" style={{ animationDelay: "0.2s" }}>Professionals&nbsp;</span>
-                <span className="hero-word-reveal" style={{ animationDelay: "0.3s" }}>With&nbsp;</span>
-                <span className="hero-word-reveal" style={{ animationDelay: "0.4s" }}>Leading&nbsp;</span>
-                <span className="hero-word-reveal" style={{ animationDelay: "0.5s" }}>Organizations&nbsp;</span>
+              <h1 className="text-3xl md:text-5xl lg:text-[3.25rem] xl:text-6xl font-extrabold text-foreground leading-[1.15] mb-6 tracking-tight text-center md:text-left hero-heading-animate mx-auto md:mx-0">
+                Connecting{" "}
+                <span className="text-sky-600 dark:text-sky-500 font-extrabold">
+                  Skilled Professionals
+                </span>{" "}
+                With Leading Organizations
               </h1>
               <p className="text-base md:text-lg text-muted-foreground mb-10 max-w-xl leading-relaxed text-center md:text-left mx-auto md:mx-0">
                 {"Your trusted recruitment partner with 7+ years of experience in connecting talented professionals with reputable organizations across multiple industries.".split(" ").map((w, idx) => (
