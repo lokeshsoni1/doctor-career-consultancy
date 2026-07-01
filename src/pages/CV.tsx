@@ -46,7 +46,6 @@ const CV = () => (
                 outline: 'none',
                 margin: 0,
                 display: 'block',
-                contain: 'layout style size',
               }}
               allow="clipboard-write"
             />

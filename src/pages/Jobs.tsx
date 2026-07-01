@@ -37,7 +37,7 @@ const Jobs = () => {
           }}
         />
         <div className="container-narrow">
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto" style={{ contain: 'layout style size' }}>
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {/* Job 0 – Customer Support Executive */}
             <AnimatedSection>
               <Tilt className="h-full">
