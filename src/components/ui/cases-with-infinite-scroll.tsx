@@ -8,7 +8,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 
-function Case() {
+function Case({ hideHeader = false }: { hideHeader?: boolean }) {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
 
@@ -54,12 +54,16 @@ function Case() {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col gap-10">
-          <h2 className="text-3xl md:text-5xl tracking-tighter font-bold text-left text-slate-900">
-            Our Services
-          </h2>
-          <p className="text-muted-foreground -mt-6 text-left max-w-2xl text-slate-600">
-            Comprehensive recruitment solutions tailored to your needs
-          </p>
+          {!hideHeader && (
+            <>
+              <h2 className="text-3xl md:text-5xl tracking-tighter font-bold text-left text-slate-900">
+                Our Services
+              </h2>
+              <p className="text-muted-foreground -mt-6 text-left max-w-2xl text-slate-600">
+                Comprehensive recruitment solutions tailored to your needs
+              </p>
+            </>
+          )}
           <Carousel setApi={setApi} className="w-full" opts={{ loop: true }}>
             <CarouselContent className="-ml-4" style={{ willChange: "transform, opacity" }}>
               {/* Card 1 */}

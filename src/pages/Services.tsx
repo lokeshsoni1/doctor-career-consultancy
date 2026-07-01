@@ -43,7 +43,7 @@ const Services = () => (
           zIndex: -1,
         }}
       />
-      <Case />
+      <Case hideHeader={true} />
     </div>
 
     <section className="section-padding">
