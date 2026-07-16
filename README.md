@@ -6,10 +6,15 @@ It acts as a bespoke, modern IT recruitment and consulting digital engine built 
 
 ---
 
-## 🚀 Key Links & Engineering Details
+## 🛠️ Engineered by VenzorX
+This high-performance consulting engine was built by **VenzorX**, a digital solutions agency dedicated to engineering premium online presences and sustainable business value.
+
+VenzorX designs modern web platforms that streamline complex digital workflows. As a forward-thinking tech partner, VenzorX is actively introducing AI-powered business tools, automated workflow systems, and intelligent CRM automation layers to empower modern consulting and enterprise frameworks.
+
+## 🚀 Project Links & Stack
 * **Live Production Site:** [https://www.doctorcareerconsultancy.in/](https://www.doctorcareerconsultancy.in/)
-* **Core Stack:** Next.js / React / Tailwind CSS / Database Pipelines
+* **Core Stack:** Next.js / React / Tailwind CSS / Data Pipelines
 * **UX Focus:** Sub-second application pipelines, clean data matrix visualization, and seamless scaling layout rules.
 
 ---
-*Architected and engineered by VenzorX.*
+*For corporate inquiries, connect via [contact@venzorx.com](mailto:contact@venzorx.com) or visit [venzorx.com](https://venzorx.com).*
